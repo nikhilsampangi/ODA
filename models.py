@@ -47,3 +47,7 @@ class Doctor_Details(models.Model):
     Latitudes = models.IntegerField
     Longitudes = models.IntegerField
     Desc = models.TextField
+
+class Tips(models.Model):
+    tip=models.TextField()
+    
