@@ -1,0 +1,23 @@
+img.m1 {
+	padding: 0;
+	margin: 0;
+	max-width: 11%;
+	max-height: 30%;
+	visibility: inherit;
+}
+
+div.mt1 {
+	margin-top: 7%;
+	margin-bottom: 7%;
+}
+
+#txt1 {
+	font-family: Bahnschrift;
+	font-size: x-large;
+}
+
+td.spc {
+	text-align: center;
+	width: 25%;
+}
+	
