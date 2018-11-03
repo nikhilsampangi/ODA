@@ -27,13 +27,13 @@
         <p class="align-middle" id="txt1">You are?</p>
       </div>
     </tr>    
-    <tr>
+    <tr id="d_row">
        	<td><div class="animated zoomIn delay-4s">
-       	  <input type="button" class="btn btn-outline-success" name="doc" value="Doctor">
+       	  <input type="button" class="btn btn-outline-success" name="doc" value="Doctor" onclick="ch_doctor()" id="doc">
    	    </div></td>
    	    <td class="spc"><div class="animated zoomIn delay-4s">or</div></td>
         <td><div class="animated zoomIn delay-4s">
-          <input type="button" class="btn btn-outline-primary" name="pat" value="Patient">
+          <input type="button" class="btn btn-outline-primary" name="pat" value="Patient" id="pat" onClick="ch_pat()">
         </div></td>
     </tr>
   </table>
