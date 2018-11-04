@@ -1,90 +1,43 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-	<title>Login V17</title>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="918878356264-ftsb0vb88h9teoe1qop63fe27gho6i25.apps.googleusercontent.com">
-
-    <link rel="stylesheet" type="text/css" href="{% static 'css_0/main.css' %}">
+	<title>Register</title>
+{#<script src="{% static 'java/pswd_val.js' %} ">#}
+{##}
+{#    </script>#}
 </head>
 <body>
+    <form method="POST" name="form" >
 
-    <div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
-    <h2  class="active"  > Everyone's login </h2>
-      <h2 class="inactive underlineHover"><a href="#"> Doctor's Login </a></h2>
+        {% csrf_token %}
+        <br><br>
+        First name * : <input type="text" name="Firstname" value="" required placeholder="First Name"><br><br>
+        Last name  *: <input type="text" name="Lastname" value="" required placeholder="Last Name"><br><br>
+        Contact Number *: <input type="text" name="phone_num" pattern="[0-9]{10}" placeholder="Contact Number" autofocus required><br><br>
+        Age *: <input type="number" name="Age" placeholder="Age" required><br><br>
+        Gender *: <select name="Gender" required>
+                    <option name="Male">Male</option>
+                    <option name="Female">Female</option>
+                    <option name="Others">Others</option>
+                 </select>
+                 <br><br>
+        Blood Group *: <select name="blood_grp" required>
+                            <option name="A">A</option>
+                            <option name="B">B</option>
+                            <option name="AB">AB</option>
+                            <option name="O">O</option>
 
-    <!-- Icon -->
-    <div class="fadeIn first">
-{#      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />#}
-    </div>
+                      </select>
+                      <select name="blood_type" required>
+                            <option name="+ve">+ve</option>
+                            <option name="-ve">-ve</option>
 
-    <!-- Login Form -->
-      <br>
-      <br>
-    <form>
-        <div id="my-signin2" align="center"></div>
-          <script>
-            function onSuccess(googleUser) {
-              console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-              let profile = googleUser.getBasicProfile();
-                  console.log('ID: ' + profile.getId());
-                  console.log('Full Name: ' + profile.getName());
-                  console.log('Given Name: ' + profile.getGivenName());
-                  console.log('Family Name: ' + profile.getFamilyName());
-                  console.log('Image URL: ' + profile.getImageUrl());
-                  console.log('Email: ' + profile.getEmail());
+                      </select><br><br>
 
-            }
-            function onFailure(error) {
-              console.log(error);
-            }
-            function renderButton() {
-              gapi.signin2.render('my-signin2', {
-                'scope': 'profile email',
-                'width': 240,
-                'height': 50,
-                'longtitle': true,
-                'theme': 'dark',
-                'onsuccess': onSuccess,
-                'onfailure': onFailure
-              });
-            }
-
-          </script>
-
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-        <br>
-        <br>
-
-        <script>
-    function signOut() {
-      var auth2 = gapi.auth2.getAuthInstance();
-      auth2.signOut().then(function () {
-        console.log('User signed out.');
-      });
-    }
-
-    function onLoad() {
-      gapi.load('auth2', function() {
-        gapi.auth2.init();
-      });
-    }
-  </script>
-  <a href="#" onclick="signOut();">Sign out</a>
-
-  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
-
+        Emergency Contact Number *: <input type="text" name="emer_phone_num"  pattern="[0-9]{10}" placeholder="Contact Number" required><br><br>
+        Medical Conditions (If any) : <input type="text" style="height: 100px; width:280px;" name="Medical"  size="40"><br><br>
+        <input type="Submit" name="Submit" value="Submit"/>
     </form>
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
-
-  </div>
-</div>
 </body>
 </html>
