@@ -32,14 +32,14 @@ class Doctor_Type(models.Model):
 
 class Doctors(models.Model):
     D_Id = models.CharField(max_length=25, primary_key = True)
-    H_Id = models.ForeignKey(Hospital_Details, on_delete = models.PROTECT())
-    T_Id = models.ForeignKey(Doctor_Type, on_delete = models.PROTECT())
+    H_Id = models.ForeignKey(Hospital_Details, on_delete = models.PROTECT)
+    T_Id = models.ForeignKey(Doctor_Type, on_delete = models.PROTECT)
     Avail = models.BooleanField()
     U_N = models.CharField(max_length=25)
     P_W = models.CharField(max_length=25)
 
 class Doctor_Details(models.Model):
-    D_Id = models.ForeignKey(Doctors, on_delete = models.PROTECT())
+    D_Id = models.ForeignKey(Doctors, on_delete = models.PROTECT)
     F_Name = models.CharField(max_length=50)
     L_Name = models.CharField(max_length=50)
     Phone = models.IntegerField
