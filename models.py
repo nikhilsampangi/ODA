@@ -51,3 +51,18 @@ class Doctor_Details(models.Model):
 class Tips(models.Model):
     tip=models.TextField()
     
+class Medical_shop (models.Model):
+    shop_id = models.CharField(max_length=255,primary_key = True)
+    shop_name = models.CharField(max_length=255)
+    Lattitude = models.FloatField(default='NULL')
+    Longitude = models.FloatField(default='NULL')
+
+class Stock_availability (models.Model):
+    shop_id = models.ForeignKey(Medical_shop,on_delete=models.PROTECT)
+    Med_id = models.CharField(max_length=255)
+    Medicine_name = models.CharField(max_length=255)
+    Stock = models.IntegerField()
+
+class General_Medicine(models.Model):
+    Disease = models.CharField(max_length=255,primary_key = True)
+    Medicine = models.CharField(max_length=255)
