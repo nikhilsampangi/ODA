@@ -30,9 +30,9 @@
     </style>
   </head>
   <body>
-    <div id="map" style="height:300px;"></div>
-
-      <script>
+    <div id="map"></div>
+    <p>Click on the map to add markers.</p>
+    <script>
 
       // In the following example, markers appear when the user clicks on the map.
       // The markers are stored in an array.
@@ -41,11 +41,9 @@
       var markers = [];
 
       function initMap() {
-        var lati={{lat|safe}}
-        var longi={{lng|safe}}
-        var doct= ["Mapplot.html","check2.html"];
-        let i = 0;
-
+        var haightAshbury = {lat: 13.549318, lng: 79.994023};
+        var latitudes={{lat|safe}}
+        var longitudes={{lng|safe}}
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
           center: haightAshbury,
@@ -64,7 +62,12 @@
 
 						infoWindow.open(map);
 						map.setCenter(pos);
-						var marker = new google.maps.Marker({position: pos, map: map});
+            var marker = new google.maps.Marker({
+          position: pos,
+          animation: google.maps.Animation.BOUNCE,
+          title: 'Current Location'
+        });
+          marker.setMap(map);
 					}, function() {
 						handleLocationError(true, infoWindow, map.getCenter());
 					});
@@ -72,36 +75,31 @@
 					// Browser doesn't support Geolocation
 					handleLocationError(false, infoWindow, map.getCenter());
 				}
-
-        var haightAshbury=[]
-        for (i = 0; i < lati.length; i++) {
-          haightAshbury = {lat: lati[i], lng: longi[i] };
-            addMarker(haightAshbury,doct[i]);
+        var i, len, text;
+        for (i = 0, len = latitudes.length; i < len; i++) {
+          var latlng = {lat: latitudes[i],lng: longitudes[i]};
+          addMarker(latlng);
         }
-
       }
 
 
 
-        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-          infoWindow.setPosition(pos);
-          infoWindow.setContent(browserHasGeolocation ?
-                                'Error: The Geolocation service failed.' :
-                                'Error: Your browser doesn\'t support geolocation.');
-          infoWindow.open(map);
-        }
+			      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+			        infoWindow.setPosition(pos);
+			        infoWindow.setContent(browserHasGeolocation ?
+			                              'Error: The Geolocation service failed.' :
+			                              'Error: Your browser doesn\'t support geolocation.');
+			        infoWindow.open(map);
+			      }
 
 
       // Adds a marker to the map and push to the array.
-      function addMarker(location,doct) {
+      function addMarker(location) {
         var marker = new google.maps.Marker({
           position: location,
           map: map,
           title: 'yashwanth',
-          });
-          google.maps.event.addListener(marker,'click',function() {
-            window.open(doct);
-          });
+        });
         markers.push(marker);
       }
 
