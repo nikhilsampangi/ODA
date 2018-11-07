@@ -1,0 +1,148 @@
+@charset "utf-8";
+/* CSS Document */
+
+.dropdown-toggle {
+    display:none;
+}
+
+#ico_logo{
+	background-image: url(ODA_nav-02.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: aqua;
+	width: 120px;
+}
+
+#ico_div {
+	position: absolute;
+	right: 0%;
+	margin-right: 10px;	
+	height: 50px;
+}
+.ico_home_active {
+	border-bottom: 4px solid #46D3A4;	
+}
+
+#ico_home {
+	background-image: url(nav_ico-01.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: aqua;
+	height: auto;
+	width: 190px;
+	min-height: 47px;	
+}
+
+.ico_appo_active {
+	border-bottom: 4px solid #6581E5;	
+}
+
+#ico_appo {
+	background-image: url(nav_ico-02.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: aqua;	
+	width: 190px;
+	height: auto;
+	min-height: 47px;	
+}
+
+.ico_assi_active {
+	border-bottom: 4px solid #EF8614;	
+}
+
+#ico_assi {
+	background-image: url(nav_ico-03.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: aqua;
+	height: auto;
+	width: 190px;
+	min-height: 47px;	
+}
+
+.ico_phar_active {
+	border-bottom: 4px solid #F94E4E;	
+}
+
+#ico_phar {
+	background-image: url(nav_ico-04.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: aqua;
+	width: 190px;
+	min-height: 47px;
+}
+
+.ico_abou_active {
+	border-bottom: 4px solid #F4B606;	
+}
+
+#ico_abou {
+	background-image: url(nav_ico-05.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: aqua;
+	height: auto;
+	width: 190px;
+	min-height: 47px;	
+}
+
+.ico_prof_active {
+	border-bottom: 4px solid #097896;	
+}
+
+#ico_prof {
+	background-image: url(nav_ico-06.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: aqua;
+	height: auto;
+	width: 190px;
+	min-height: 47px;
+}
+
+.btn-circle.btn-xl {
+	width: 70px;
+	height: 70px;
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-bottom: 10px;
+	font-size: 24px;
+	line-height: 1.33;
+	border-radius: 35px;
+}
+
+#sos {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+#tile_1 {
+	padding-left: 10%;
+}
+
+#main_cont {
+	max-width: 66%;
+	margin-top: 50px;
+}
+
+
+.dropdown:hover .dropdown-menu{
+  display:block;
+}
+
+@media only screen and (min-width: 768px) {
+  .dropdown:hover .dropdown-menu{
+     display:block;
+	}}
+
+
+#navbar {
+   z-index: 10000;
+   position: fixed;
+   top: 0px;
+   width: 100%;
+}
