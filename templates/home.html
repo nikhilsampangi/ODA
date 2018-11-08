@@ -1,0 +1,13 @@
+{% extends 'FAQ/base.html' %}
+{% block content %}
+    {% for item in faq %}
+    <div id = 'post'>
+        <span class='que'>
+        {{ item.Question }}
+        </span><br><br>
+        <span class="ans">
+            {{ item.Answer }}
+        </span>
+    </div><br>
+    {% endfor %}
+{% endblock content%}
