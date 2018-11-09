@@ -61,3 +61,14 @@ class Stock_availability (models.Model):
 class General_Medicine(models.Model):
     Disease = models.CharField(max_length=255,primary_key = True)
     Medicine = models.CharField(max_length=255)
+
+class Blood_Bank(models.Model):
+    BB_id=models.CharField(max_length=255,primary_key=True)
+    BB_name=models.CharField(max_length=255)
+    Lat = models.FloatField(default='NULL')
+    Long = models.FloatField(default='NULL')
+
+class Blood_avail(models.Model):
+    BB_id=models.ForeignKey(Blood_Bank,on_delete=models.PROTECT)
+    Blood_grp=models.CharField(max_length=255)
+    Availability=models.CharField(max_length=255)
