@@ -1,0 +1,82 @@
+General_Medicine TABLE DATA
+
+
+	#EYE        
+	('Blepharitis','Vasocidin'),
+        ('Cataracts','Ophthalmics'),
+        ('Itchy eyes','Zadiator'),
+        ('Dry Eyes','Restasis'),
+        ('Conjunctivitis','Romycin')
+        
+	#NOSE
+        ('Nasal polyp','Nasal corticosteroids spray'),
+        ('Rhinitis','Astelin'),
+        ('Common cold','Recofast plus'),
+        ('Nose bleed','warfarin'),
+        ('Influenza','zanamivir '),
+        ('Sinus infection','Zithromax'),
+        
+	#Throat
+        ('Tonsillitis','Chloraseptic'),
+        ('Laryngitis','ibuprofen'),
+        ('Mouth ulcer','Riboflavin'),
+        ('Nasal congestion','Rhinocort'),
+        ('Candidiasis','nystatin'),
+        
+	#EAR
+        ('Tinnitus','nortriptyline'),
+        ('Vertigo','Reglan'),
+        ('Otitis','amoxicillin '),
+        ('Dizziness','Phenergan'),
+        ('Abscess','flucloxacillin'),
+        ('Microtia','Accutane'),
+        
+	#HEAD
+        ('Tension headache','Esgic'),
+        ('Migraine headache','naproxen'),
+        ('Cluster headache','Imitrex'),
+        
+	#MUSCLES(ALL BODY)
+        ('Muscle weakness','muvitol'),
+        ('Muscle pain','moov'),
+        ('Fatigue','Neupogen '),
+        ('Paralysis','Diamox'),
+        ('Muscle cramps','Lasix'),
+        
+	#STOMACH
+        ('Stomachache','Zantac'),
+        ('Vomiting','Dolasetron'),
+        ('Gastritis','omeprazole'),
+        ('Diarrhea','loperamide '),
+        ('Constipation','Ridol'),
+        ('Food poisioning','ampicillin'),
+        ('Indigestion','Digene'),
+        
+	#BONES
+        ('Bone pain','Emflex'),
+        ('Bone Infarction','Actonel'),
+        ('Arthritis','Rituxan'),
+        ('Bone Fracture','Panado'),
+        ('Rickets','Drisdol'),
+        
+	#WEAKNESS
+        ('Confusion',' Razadyne'),
+        ('Polymyositis','Trexall'),
+        
+	#FEVER
+        ('Dengue','Acetaminophen '),
+        ('Malaria','Aralen'),
+        ('Ebola','VSV-EBOV'),
+        ('Viral fever','Dolo'),
+        ('Typhoid','Ciprofloxacin'),
+        ('Yellow fever','YF-Vax'),
+        ('Jaundice','Tylenol'),
+
+        #SKIN
+        ('Skin infection','Mupirocin'),
+        ('Skin rash','Micatin'),
+        ('Skin Allergy','Alimemazine'),
+        ('Ringworm','Ring guard'),
+        ('Skin burn','Burnol'),
+        ('Skin swelling','Epinephrine'),
+        ('Skin irritation','Anthralin'),
