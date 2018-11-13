@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% if title %}
+            {{ title }}
+        {% else %}
+            blog
+        {% endif %}
+    </title>
+<style>
+.blog_post{
+    border: 1px solid blue;
+    width: 75%;
+    background: blue;
+    padding: 5px;
+    border-radius: 0 4px 4px 0;
+}
+
+.blog_author{
+    border: 1px solid red;
+    width: 10%;
+    margin-right: 10%;
+    background: red;
+    padding: 1px;
+    border-radius: 0 4px 4px 0;
+}
+
+.blog_message{
+    border: 1px lawngreen;
+    padding: 1px;
+    text-decoration-color: aliceblue;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+{% block content %}
+{% endblock %}
+</body>
+</html>
