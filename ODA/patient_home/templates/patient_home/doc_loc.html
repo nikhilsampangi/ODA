@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Doctor Locator</title>
+
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'patient_home/doc_loc.css' %}">
+	
+	<!--Bootstrap	-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">	
+			  	
+	<!--Google Fonts	-->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oswald" rel="stylesheet">
+	
+
+	
+</head>
+
+<body>
+    <!-- Header -->
+	<nav class="navbar navbar-expand-lg bg-light navbar-light" id="navbar">
+  		<div id="ico_logo">
+            <a class="navbar-brand" href='{% url 'pat_home_page' %}'>
+                &nbsp;
+            </a>
+        </div>
+		<div id="ico_div">
+		  <ul class="navbar-nav">
+		    <li class="nav-item active">
+		      <div id="ico_home">
+		      	<a class="nav-link"  href='{% url 'pat_home_page' %}'>&nbsp;</a>
+		      </div>
+		    </li>
+		    <li class="nav-item dropdown">
+		      <div id="ico_appo">
+		      	<a class="nav-link" href="#" id="appDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
+
+				<div class="dropdown-menu" aria-labelledby="appDropdown">
+				  <a class="dropdown-item" href='{% url 'doctor_list_page' %}'>Doctors</a>
+
+				  <div class="dropdown-divider"></div>
+
+				  <a class="dropdown-item" href='{% url 'doctor_locator' %}'>Doctor Locator</a>
+
+				  <div class="dropdown-divider"></div>
+
+				  <a class="dropdown-item" href='{% url 'my_appointments' %}'>My Appointments</a>
+				</div>
+		      </div>
+		      </li>
+		    <li class="nav-item dropdown">
+		      <div id="ico_assi">
+		      	<a class="nav-link" href="#" id="assiDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
+				<div class="dropdown-menu" aria-labelledby="assiDropdown">
+				  <a class="dropdown-item" href="#">Doctor Identification</a>
+				  <div class="dropdown-divider"></div>
+				  <a class="dropdown-item" href="#">Disease Identification</a>
+				  <div class="dropdown-divider"></div>
+				  <a class="dropdown-item" href="#">Blood Bank</a>
+				</div>
+		      </div>
+		     </li>
+		    <li class="nav-item dropdown">
+		      <div id="ico_phar">
+		      	<a class="nav-link" href="#" id="pharDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
+				<div class="dropdown-menu" aria-labelledby="pharDropdown">
+				  <a class="dropdown-item" href="#">Pharmacy Locator</a>
+				  <div class="dropdown-divider"></div>
+				  <a class="dropdown-item" href="#">General Medicines</a>
+				  <div class="dropdown-divider"></div>
+				  <a class="dropdown-item" href="#">Stock Availability</a>
+				</div>
+		      </div>
+		      </li>
+		    <li class="nav-item">
+		      <div id="ico_abou"><a class="nav-link" href="#">&nbsp;</a></div>
+		    </li>
+		    <li class="nav-item dropdown">
+		      <div id="ico_prof">
+		      	<a class="nav-link" href="#" id="profDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
+				<div class="dropdown-menu" aria-labelledby="profDropdown">
+				  <a class="dropdown-item" href="#">My Account</a>
+				  <div class="dropdown-divider"></div>
+				  <a class="dropdown-item" href="#">Setttings</a>
+				  <div class="dropdown-divider"></div>
+				  <a class="dropdown-item" href="#">Log Out</a>
+				</div>
+		      </div>
+		      </li>
+
+		    </ul>
+		  </div>
+	</nav>
+	
+	<!-- Emergency Services Button -->
+	<div id="sos">
+		<button type="button" class="btn btn-danger btn-circle btn-xl">
+			<div id="sos_text">SOS</div>
+		</button>
+	</div>
+	
+	<br><br><br><br>
+	<!-- Main Content -->
+	<div class="container">
+		<div class="row">
+			<p style="font-family: Josefin Sans;font-size:60px">These are all the Doctors near you:</p>
+		</div>
+		
+		<!-- Google Maps API -->
+		
+		<div class="row">
+			<p style="font-family: Josefin Sans;font-size:30px">also try:<br><a href="">Pharmacy Locator</a> for finding pharmacies near you and <br><a href="">Blood Bank Locator</a> for checking Blood Availability near you</p>
+		</div>		
+	</div>	
+	
+
+    <!-- Footer -->
+    <div>
+		<footer class="footer-bs">
+			<div class="row">
+				<div class="col-md-5 footer-brand animated fadeInLeft">
+					<div id="foot_logo">&nbsp;</div>
+					<p>Made as a project for ‘Applied Software Engineering-1’ course of Indian Institute of Information Technology Sri City under the supervision of Dr. Balasubramanian (Subu) Kandaswamy, Mr. Ravi Venkataraman, Mr. Prabhat Padhay.</p>
+					<p>© 2018 ODA, All rights reserved</p>
+				</div>
+				<div class="col-md-4 footer-nav animated fadeInUp">
+					<div class="col-md-6">
+						<ul class="list">
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Documentation</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 footer-social animated fadeInDown">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">Instagram</a></li>
+						<li><a href="https://github.com/nikhilsampangi/ODA/">GitHub</a></li>
+					</ul>
+				</div>				
+			</div>
+		</footer>
+	</div>
+        
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    {% load static %}
+    <script src="{% static 'patient_home/doc_loc.js' %}"></script>
+
+	<!-- Popper.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>	
+
+	</body>
+</html>
+
+
+
+
