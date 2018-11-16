@@ -44,6 +44,9 @@
         var haightAshbury = {lat: 13.549318, lng: 79.994023};
         var latitudes={{lat|safe}}
         var longitudes={{lng|safe}}
+        var shop_names={{names|safe}}
+        var doct= ["http://127.0.0.1:8000/diseaseidentification/medicalshops/"];
+
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
           center: haightAshbury,
@@ -78,7 +81,7 @@
         var i, len, text;
         for (i = 0, len = latitudes.length; i < len; i++) {
           var latlng = {lat: latitudes[i],lng: longitudes[i]};
-          addMarker(latlng);
+          addMarker(latlng,doct[0],shop_names[i]);
         }
       }
 
@@ -94,11 +97,14 @@
 
 
       // Adds a marker to the map and push to the array.
-      function addMarker(location) {
+      function addMarker(location,doct,name) {
         var marker = new google.maps.Marker({
           position: location,
           map: map,
-          title: 'yashwanth',
+          title: name,
+        });
+        google.maps.event.addListener(marker,'click',function() {
+          window.open(doct+name);
         });
         markers.push(marker);
       }
