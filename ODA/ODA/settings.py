@@ -131,3 +131,6 @@ STATIC_DIRS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfilea')
+
+
+LOGOUT_REDIRECT_URL='welcome:frontpage'

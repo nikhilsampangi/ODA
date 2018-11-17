@@ -35,7 +35,9 @@
                 </tr>
                 <tr id="d_row">
                     <td><div class="animated zoomIn delay-4s">
-                      <input type="button" class="btn btn-outline-success" name="doc" value="Doctor" onclick="window.location.href='doctor/'" id="doc">
+                        <a href="{% url 'welcome:doc-l-r' %}">
+                        <button class="btn btn-outline-success" name="doc" value="Doctor" id="doc">Doctor</button>
+                        </a>
                     </div></td>
                     <td class="spc"><div class="animated zoomIn delay-4s">or</div></td>
                     <td><div class="animated zoomIn delay-4s">
