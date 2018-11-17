@@ -53,14 +53,10 @@ h2 {
   padding: 0px;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.5);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.5);
-  text-shadow: 2px 2px #ff0000;
   text-align: center;
 
 }
 
-#text-shadow {
-  text-shadow: 2px 2px #ff0000;
-}
 
 #formFooter {
   background-color: #34495E;
@@ -80,7 +76,7 @@ h2.inactive {
 }
 
 h2.active {
-  text-shadow: 2px 2px #ff0000;
+  text-shadow: 2px 2px #000000;
   color: #D5F5E3 ;
   border-bottom: 2px solid #17202A;
 

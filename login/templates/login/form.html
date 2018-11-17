@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form name="myform1" method="post" action="/home/">
+    {% csrf_token %}
+    <input type="hidden" name="f_name" value="{{ f_name }}">
+    <script>
+        document.myform1.submit()
+    </script>
+</form>
+</body>
+</html>

@@ -1,45 +1,26 @@
+
 {% load static %}
 <!DOCTYPE html>
-<html>
 <head>
-	<title>Register</title>
-    <script src="{% static 'java/pswd_val.js' %} ">
-
-    </script>
+	<title>Login</title>
 </head>
 <body>
-    <form method="POST" name="form" onsubmit="return checkForm(form);" >
 
+
+    <form  name="myform" method="POST" action='' >
         {% csrf_token %}
-        <br><br>
-        First name : <input type="text" name="Firstname" value="" autofocus required placeholder="First Name"><br><br>
-        Last name : <input name="Lastname" value="" required placeholder="Last Name"><br><br>
-        Email : <input type="email" name="Email" value="" placeholder="Email"  required><br><br>
-        Password : <input type="password" name="password" value="" placeholder="Password" required><br><br>
-        Conform Password : <input type="password" name="con_password" placeholder="Conform Password" required><br><br>
-        Blood Group : <select name="blood_grp" required>
-                            <option name="A">A</option>
-                            <option name="B">B</option>
-                            <option name="AB">AB</option>
-                            <option name="O">O</option>
 
-                      </select>
-                      <select name="blood_grp" required>
-                            <option name="+ve">+ve</option>
-                            <option name="-ve">-ve</option>
+        email : <input type="text" name="doc_email" value="">
+        <br>
+        <br>
+        password : <input type="password" name="password" value="">
+        <br>
+        <br>
+        <input type="submit" name="submit">
 
-                      </select><br><br>
 
-        Licence Number : <input type="text" name="licence" required><br><br>
-        Doctor Type : <select name="Doctor Type">
-                        <option name="gendral">Gendral</option>
-                      </select><br><br>
-        Doctor Degree : <input type="text" name="Doctor_Deg" required><br><br>
-        <input type="Submit" name="Submit" value="Submit"/>
+
     </form>
+</div>
 </body>
 </html>
-
-{% if submitbutton == "Submit" %}
-
-{% endif %}

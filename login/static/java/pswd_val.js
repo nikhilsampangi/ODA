@@ -25,12 +25,7 @@ function checkForm(form)
         form.password.focus();
         return false;
       }
-      re = /[A-Z]/;
-      if(!re.test(form.password.value)) {
-        alert("Error: password must contain at least one uppercase letter (A-Z)!");
-        form.password.focus();
-        return false;
-      }
+
     } else {
       alert("Error: Please check that you've entered and confirmed your password!");
       form.password.focus();
@@ -40,3 +35,4 @@ function checkForm(form)
     alert("You entered a valid password: " + form.password.value);
     return true;
   }
+document.getElementsByName(email).readonly=true;

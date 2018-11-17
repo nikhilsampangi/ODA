@@ -3,17 +3,19 @@
 <html>
 <head>
 	<title>Register</title>
-{#<script src="{% static 'java/pswd_val.js' %} ">#}
+{#    <script src="{% static 'java/pswd_val.js' %} ">#}
 {##}
 {#    </script>#}
 </head>
 <body>
-    <form method="POST" name="form" >
+    <form method="POST" name="form"  action="val_p/" >
 
         {% csrf_token %}
         <br><br>
-        First name * : <input type="text" name="Firstname" value="" required placeholder="First Name"><br><br>
-        Last name  *: <input type="text" name="Lastname" value="" required placeholder="Last Name"><br><br>
+        First name * : <input type="text" name="Firstname" value="{{f_name}}" required placeholder="First Name"><br><br>
+        Last name  *: <input type="text" name="Lastname" value="{{ l_name }}" required placeholder="Last Name"><br><br>
+        Email : <input type="email" id="email_1" name="email" value="{{ email }}"><br><br>
+        <script src="{% static 'java/req.js' %} "></script>
         Contact Number *: <input type="text" name="phone_num" pattern="[0-9]{10}" placeholder="Contact Number" autofocus required><br><br>
         Age *: <input type="number" name="Age" placeholder="Age" required><br><br>
         Gender *: <select name="Gender" required>
@@ -37,6 +39,7 @@
 
         Emergency Contact Number *: <input type="text" name="emer_phone_num"  pattern="[0-9]{10}" placeholder="Contact Number" required><br><br>
         Medical Conditions (If any) : <input type="text" style="height: 100px; width:280px;" name="Medical"  size="40"><br><br>
+
         <input type="Submit" name="Submit" value="Submit"/>
     </form>
 </body>

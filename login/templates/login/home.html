@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOMR</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="918878356264-ftsb0vb88h9teoe1qop63fe27gho6i25.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script src= "{% static 'java/google_auth.js' %}" > </script>
+
+
+</head>
+<body>
+<p>Welcome  {{ user.username }}</p>
+<br><br>
+<a href="/home" onclick="signOut();">Sign out</a>
+
+        <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+
+
+</body>
+</html>
