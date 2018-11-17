@@ -31,5 +31,8 @@ def my_appointments(request):
     return render(request, 'patient_home/my_appo.html')
 
 def blood_bank(request):
+    return render(request, 'patient_home/blood_banks.html')
+
+def pharma_locator(request):
     return render(request, 'patient_home/pharma_loc.html')
 

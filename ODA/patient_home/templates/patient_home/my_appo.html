@@ -51,23 +51,34 @@
 		      <div id="ico_assi">
 		      	<a class="nav-link" href="#" id="assiDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
 				<div class="dropdown-menu" aria-labelledby="assiDropdown">
+
 				  <a class="dropdown-item" href="#">Doctor Identification</a>
+
 				  <div class="dropdown-divider"></div>
+
 				  <a class="dropdown-item" href="#">Disease Identification</a>
+
 				  <div class="dropdown-divider"></div>
-				  <a class="dropdown-item" href="#">Blood Bank</a>				  
-				</div>		      	
+
+				  <a class="dropdown-item" href="{% url 'blood_banks' %}">Blood Bank</a>
+				</div>
 		      </div>
 		     </li>
 		    <li class="nav-item dropdown">
 		      <div id="ico_phar">
 		      	<a class="nav-link" href="#" id="pharDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
 				<div class="dropdown-menu" aria-labelledby="pharDropdown">
-				  <a class="dropdown-item" href="#">Pharmacy Locator</a>
+
+				  <a class="dropdown-item" href="{% url 'pharma_loc' %}">Pharmacy Locator</a>
+
 				  <div class="dropdown-divider"></div>
+
 				  <a class="dropdown-item" href="#">General Medicines</a>
-				  <div class="dropdown-divider"></div>				  
-				  <a class="dropdown-item" href="#">Stock Availability</a>				  
+
+				  <div class="dropdown-divider"></div>
+
+				  <a class="dropdown-item" href="#">Stock Availability</a>
+
 				</div>		      	
 		      </div>
 		      </li>

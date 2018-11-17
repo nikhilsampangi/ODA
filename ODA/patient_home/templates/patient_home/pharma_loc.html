@@ -4,63 +4,82 @@
 <meta charset="utf-8">
 	<title>Pharmacy Locator</title>
 
-	{% load static %}
+    {% load static %}
 	<link rel="stylesheet" href="{% static 'patient_home/pharma_loc.css' %}">
-	
+
 	<!--Bootstrap	-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">	
 			  	
 	<!--Google Fonts	-->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oswald" rel="stylesheet">
-	
-
+		
 </head>
 
 <body>
-	<!-- Nav-Bar -->
+    <!-- Header -->
 	<nav class="navbar navbar-expand-lg bg-light navbar-light" id="navbar">
-  		<div id="ico_logo"><a class="navbar-brand" href="#">&nbsp;</a></div>
+  		<div id="ico_logo">
+            <a class="navbar-brand" href='{% url 'pat_home_page' %}'>
+                &nbsp;
+            </a>
+        </div>
 		<div id="ico_div">
 		  <ul class="navbar-nav">
 		    <li class="nav-item active">
 		      <div id="ico_home">
-		      	<a class="nav-link"  href="#">&nbsp;</a>
+		      	<a class="nav-link"  href='{% url 'pat_home_page' %}'>&nbsp;</a>
 		      </div>
 		    </li>
 		    <li class="nav-item dropdown">
 		      <div id="ico_appo">
 		      	<a class="nav-link" href="#" id="appDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
+
 				<div class="dropdown-menu" aria-labelledby="appDropdown">
-				  <a class="dropdown-item" href="#">Doctors</a>
+				  <a class="dropdown-item" href='{% url 'doctor_list_page' %}'>Doctors</a>
+
 				  <div class="dropdown-divider"></div>
-				  <a class="dropdown-item" href="#">Doctor Locator</a>
+
+				  <a class="dropdown-item" href='{% url 'doctor_locator' %}'>Doctor Locator</a>
+
 				  <div class="dropdown-divider"></div>
-				  <a class="dropdown-item" href="#">My Appointments</a>
-				</div>		      		      	
+
+				  <a class="dropdown-item" href='{% url 'my_appointments' %}'>My Appointments</a>
+				</div>
 		      </div>
 		      </li>
 		    <li class="nav-item dropdown">
 		      <div id="ico_assi">
 		      	<a class="nav-link" href="#" id="assiDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
 				<div class="dropdown-menu" aria-labelledby="assiDropdown">
+
 				  <a class="dropdown-item" href="#">Doctor Identification</a>
+
 				  <div class="dropdown-divider"></div>
+
 				  <a class="dropdown-item" href="#">Disease Identification</a>
+
 				  <div class="dropdown-divider"></div>
-				  <a class="dropdown-item" href="#">Blood Bank</a>		  
-				</div>		      	
+
+				  <a class="dropdown-item" href="{% url 'blood_banks' %}">Blood Bank</a>
+				</div>
 		      </div>
 		     </li>
 		    <li class="nav-item dropdown">
 		      <div id="ico_phar">
 		      	<a class="nav-link" href="#" id="pharDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
 				<div class="dropdown-menu" aria-labelledby="pharDropdown">
-				  <a class="dropdown-item" href="#">Pharmacy Locator</a>
+
+				  <a class="dropdown-item" href="{% url 'pharma_loc' %}">Pharmacy Locator</a>
+
 				  <div class="dropdown-divider"></div>
+
 				  <a class="dropdown-item" href="#">General Medicines</a>
-				  <div class="dropdown-divider"></div>				  
-				  <a class="dropdown-item" href="#">Stock Availability</a>				  
-				</div>		      	
+
+				  <div class="dropdown-divider"></div>
+
+				  <a class="dropdown-item" href="#">Stock Availability</a>
+
+				</div>
 		      </div>
 		      </li>
 		    <li class="nav-item">
@@ -73,15 +92,15 @@
 				  <a class="dropdown-item" href="#">My Account</a>
 				  <div class="dropdown-divider"></div>
 				  <a class="dropdown-item" href="#">Setttings</a>
-				  <div class="dropdown-divider"></div>				  
-				  <a class="dropdown-item" href="#">Log Out</a>				  
-				</div>		      	
+				  <div class="dropdown-divider"></div>
+				  <a class="dropdown-item" href="#">Log Out</a>
+				</div>
 		      </div>
 		      </li>
 
 		    </ul>
-		  </div>		
-	</nav><br><br><br><br>
+		  </div>
+	</nav>
 	
 	<!-- Emergency Services Button -->
 	<div id="sos">
@@ -90,14 +109,16 @@
 		</button>
 	</div>
 	
-	
+    <br><br><br><br>
 	<!-- Main Content -->
 	<div class="container">
 		<div class="row">
 			<p style="font-family: Josefin Sans;font-size:60px">These are all the Pharmacies near you:</p>
 		</div>
-		
+
+				
 		<!-- Google Maps API -->
+
 		
 		<div class="row">
 			<p style="font-family: Josefin Sans;font-size:30px">also try:<br><a href="">Doctor Locator</a> for finding doctors near you and <br><a href="">Blood Bank Locator</a> for checking Blood Availability</p>
@@ -140,10 +161,14 @@
 	<!-- Jquery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
+    <!-- Javascript -->
     {% load static %}
     <script src="{% static 'patient_home/pharma_loc.js' %}"></script>
 
+	<!-- Popper.js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>	
 
 	</body>
