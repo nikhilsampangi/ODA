@@ -1,0 +1,167 @@
+{% load static from static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+
+.container {
+  position: relative;
+  width: 50%;
+  max-width: 300px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 280px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  height:100%;
+  text-align: center;
+  padding-top:130px;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+  <div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'ear_infection.jpg' %}" alt="ear_infection" class="image">
+  <div class="overlay">ear_infection</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+  Ear Infection
+
+<br>
+<br>
+An ear infection, or otitis media, is the most common cause of earaches. Although this condition is a frequent cause of infant distress and is often associated with children, it can also affect adults.
+</div>
+</div>
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'earwax.jpg' %}" alt="earwax" class="image">
+  <div class="overlay">earwax</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+  Earwax
+
+
+<br>
+<br>
+Earwax is produced by glands in the ear canal. Although scientists are still not completely sure why we have earwax, it does trap dust and other small particles and prevent them from reaching, and potentially damaging or infecting the eardrum. Normally, the wax dries up and falls out of the ear, along with any trapped dust or debris. Everyone makes ear wax, but the amount and type are genetically determined just like hair color or height.
+</div>
+</div>
+
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'labyrinthitis.jpg' %}" alt="labyrinthitis" class="image">
+  <div class="overlay">labyrinthitis</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+  labyrinthitis
+
+<br>
+<br>
+Labyrinthitis is an inner ear disorder. The two vestibular nerves in your inner ear send your brain information about your spatial navigation and balance control. When one of these nerves becomes inflamed, it creates a condition known as labyrinthitis
+</div>
+</div>
+
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'cholesteatoma.jpg' %}" alt="cholesteatoma" class="image">
+  <div class="overlay">cholesteatoma</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+Cholesteatoma
+<br>
+<br>
+When cells clump together, they can form a cyst, a small sac that's filled with air, fluid, or something else. Sometimes, skin cells inside your ear can do this and cause a lump called a cholesteatoma.
+</div>
+</div>
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'vertigo.jpg' %}" alt="vertigo" class="image">
+  <div class="overlay">vertigo</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+  What is Vertigo?
+
+<br>
+<br>
+Vertigo is a sensation of feeling off balance. If you have these dizzy spells, you might feel like you are spinning or that the world around you is spinning.
+</div>
+</div>
+
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'aied.jpg' %}" alt="aied" class="image">
+  <div class="overlay">aied</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+  Autoimmune Inner Ear Disease
+
+<br>
+<br>
+Autoimmune inner ear disease (AIED), is a rare disease that happens when your body's immune system mistakenly attacks your inner ear. It can cause dizziness, ringing in your ears, and hearing loss.
+</div>
+</div>
+
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'osteoclerosis.jpg' %}" alt="osteoclerosis" class="image">
+  <div class="overlay">osteoclerosis</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+  What is Otosclerosis?
+
+<br>
+<br>
+Otosclerosis is caused by an abnormal growth of bone in the ears, which causes hearing loss. In most cases, a surgical operation will restore the hearing.
+</div>
+</div>
+
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'Tinnitus.jpg' %}" alt="Tinnitus" class="image">
+  <div class="overlay">Tinnitus</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+  tinnitus
+
+  <br>
+<br>
+Tinnitus (pronounced ti-ni-tis), or ringing in the ears, is the sensation of hearing ringing, buzzing, hissing, chirping, whistling, or other sounds. The noise can be intermittent or continuous, and can vary in loudness.
+</div>
+</div>
+
+
+</body>
+</html>

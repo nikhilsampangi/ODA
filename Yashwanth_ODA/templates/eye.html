@@ -1,0 +1,163 @@
+{% load static from static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+
+.container {
+  position: relative;
+  width: 50%;
+  max-width: 300px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 280px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  height:100%;
+  text-align: center;
+  padding-top:130px; 
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+  <div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'eye_cornea.jpg' %}" alt="Cornea" class="image">
+  <div class="overlay">Cornea</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+Night Blindness
+<br>
+<br>
+Is it hard to see at night, especially while driving? Is it tough to find your way around in dark places, such as movie theaters?
+</div>
+</div>
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'cataract.jpg' %}" alt="Cataract" class="image">
+  <div class="overlay">Cataract</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+  Cataract
+<br>
+<br>
+A cataract is the loss of transparency of the crystalline lens, the eyeís natural lens located behind the pupil. Rays of light pass through this lens to reach the retina, where images are formed. If the lens becomes less transparent and obstructs the passage of light to the retina, the patient suffers from a progressive loss of vision.
+</div>
+</div>
+
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'gluacoma.jpg' %}" alt="gluacoma" class="image">
+  <div class="overlay">gluacoma</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+  Glaucoma
+<br>
+<br>
+Glaucoma encompasses a group of ocular diseases that cause progressive damage to the optic nerve. With age, incidence increases and the visual field is reduced. If not treated early, vision can be lost completely.Glaucoma sufferers are four times more likely to fall over than people with healthy vision.
+</div>
+</div>
+
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'conjunctivitis.jpg' %}" alt="conjunctivitis" class="image">
+  <div class="overlay">conjunctivitis</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+  Conjunctivitis
+<br>
+<br>
+Conjunctivitis, also known as pinkeye, is an inflammation of the conjunctiva. The conjunctiva is the thin clear tissue that lies over the white part of the eye and lines the inside of the eyelid.
+</div>
+</div>
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'myopia.jpg' %}" alt="myopia" class="image">
+  <div class="overlay">myopia</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+  Myopia
+<br>
+<br>
+Myopia, or nearsightedness, is a refractive defect or error in visual focusing. Images are focused in front of the retina and not on it, making long distance vision difficult.
+</div>
+</div>
+
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'hypermetropia.jpg' %}" alt="hypermetropia" class="image">
+  <div class="overlay">hypermetropia</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+Night Blindness
+<br>
+<br>
+Is it hard to see at night, especially while driving? Is it tough to find your way around in dark places, such as movie theaters?
+</div>
+</div>
+
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'astigmatism.jpg' %}" alt="astigmatism" class="image">
+  <div class="overlay">astigmatism</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+  What Is Astigmatism?
+
+<br>
+<br>
+It is a big word, but it simply means your eye isnít completely round. Almost all of us have it to some degree.
+</div>
+</div>
+
+
+<div style="float:left;width:50%;height:300px">
+<div class="container" style='float:left;width:50%'>
+  <img src="{% static 'nightblind.jpg' %}" alt="Night Blindness" class="image">
+  <div class="overlay">Night Blindness</div>
+</div>
+<div style='float:left;width:50%;padding-top:30px'>
+
+Night Blindness
+<br>
+<br>
+Is it hard to see at night, especially while driving? Is it tough to find your way around in dark places, such as movie theaters?
+</div>
+</div>
+
+
+</body>
+</html>
