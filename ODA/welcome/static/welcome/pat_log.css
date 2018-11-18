@@ -4,7 +4,7 @@ body{
 	color:#3d4c4c;
 	background-image: url(images/doc_log_bg.png);
 	background-repeat: no-repeat;
-	background-size: cover;		
+	background-size: cover;
 	background-attachment: fixed;
 	font:600 16px/18px 'Open Sans',sans-serif;
 }
@@ -169,6 +169,7 @@ a{color:inherit;text-decoration:none}
 	text-align: center;
 	font-family: Raleway;
 	color: #FFFFFF;
+    line-height: 30px;
 	font-size: x-large;
 }
 

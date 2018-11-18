@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'welcome',
-    'DandS.apps.DandsConfig',
+    'patient_home',
 ]
 
 MIDDLEWARE = [
@@ -78,8 +78,13 @@ WSGI_APPLICATION = 'ODA.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'oda_db',
+        'USER': 'root',
+        'PASSWORD': 'iiits@123',
+        'HOST': 'localhost',
+        'PORT': '',
+        'OPTIONS': {'autocommit': True},
     }
 }
 
@@ -126,4 +131,7 @@ STATIC_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfilea')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+
+LOGOUT_REDIRECT_URL='welcome:frontpage'

@@ -25,21 +25,25 @@
             <div class="mt1" align="center">
               <table>
                 <tr>
-                    <div class="animated fadeIn slower delay-2s">{% load static %}<img class="m1" src="{% static 'welcome/images/ODA-02-01.png' %}" alt="logo"></div>
+                    <div class="animated fadeIn slower">{% load static %}<img class="m1" src="{% static 'welcome/images/ODA-02-01.png' %}" alt="logo"></div>
                 </tr>
                 <tr>
                   <br>
-                  <div class="animated fadeInDown slow delay-3s">
+                  <div class="animated fadeInDown slow delay-1s">
                     <p class="align-middle" id="txt1">You are?</p>
                   </div>
                 </tr>
                 <tr id="d_row">
-                    <td><div class="animated zoomIn delay-4s">
-                      <input type="button" class="btn btn-outline-success" name="doc" value="Doctor" onclick="window.location.href='doctor/'" id="doc">
+                    <td><div class="animated zoomIn delay-2s">
+                        <a href="{% url 'welcome:doc-l-r' %}">
+                        <button class="btn btn-outline-success" name="doc" value="Doctor" id="doc">Doctor</button>
+                        </a>
                     </div></td>
-                    <td class="spc"><div class="animated zoomIn delay-4s">or</div></td>
-                    <td><div class="animated zoomIn delay-4s">
-                      <input type="button" class="btn btn-outline-primary" name="pat" value="Patient" id="pat" onClick="ch_pat()">
+                    <td class="spc"><div class="animated zoomIn delay-2s">or</div></td>
+                    <td><div class="animated zoomIn delay-2s">
+                        <a href="{% url 'welcome:pat_log' %}">
+                        <button class="btn btn-outline-primary" name="pat" value="Patient" id="pat">Patient</button>
+                        </a>
                     </div></td>
                 </tr>
               </table>
