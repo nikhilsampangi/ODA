@@ -245,3 +245,18 @@ class Medicalshoplistview(APIView):
             serializer.save()
             return Response(serializer.data , status=status.HTTP_201_CREATED)
         return Response(serializer.data,status=status.HTTP_400_BAD_REQUEST)
+    
+    
+    
+    
+    
+def sending_mail(request):
+
+    send_mail(
+        'Notifying your appointment',
+        'You have an appointment in half an hour http://127.0.0.1:8000/diseaseidentification/tips',
+        'onlinedocapp@gmail.com',
+        ['yashukikkuri@gmail.com'],
+        fail_silently=False,
+    )
+    return render(request,'sending_mail.html')
