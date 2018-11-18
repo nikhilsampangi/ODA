@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.contrib.auth import authenticate, login ,logout
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
 from welcome.models import Doctors
@@ -40,7 +40,7 @@ def front_page(request):
 
 def doctor_page(request):
     if request.user.is_authenticated:
-       return redirect('welcome:home')
+        return redirect('welcome:home')
     return render(request, 'welcome/doc_log.html')
 
 
@@ -68,7 +68,7 @@ def doc_register(request):
     if request.method == 'POST':
         firstname = request.POST.get('f_name')
         lastname = request.POST.get('l_name')
-        username=firstname + '' + lastname
+        username = firstname + '' + lastname
         email = request.POST.get('email')
         password = request.POST.get('password')
         phone = request.POST.get('phone_num')
@@ -87,7 +87,8 @@ def doc_register(request):
             user = User.objects.create_user(username=username,
                                             email=email,
                                             password=password, )
-            d = Doctors(D_Id=user, Phone=phone, license=l_num ,gender=gender, Degrees=doc_deg, Latitudes=123, Longitudes=12, Avail=1)
+            d = Doctors(D_Id=user, Phone=phone, license=l_num, gender=gender, Degrees=doc_deg, Latitudes=123,
+                        Longitudes=12, Avail=1)
             d.save()
             user = authenticate(username=username, password=password)
             if user:
@@ -97,3 +98,7 @@ def doc_register(request):
                     pass
             return redirect('welcome:home')
     return render(request, 'welcome/doc_log.html', doc_type_list)
+
+
+def pat_log(request):
+    return render(request, 'welcome/pat_log.html')
