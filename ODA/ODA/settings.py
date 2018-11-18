@@ -134,4 +134,4 @@ STATIC_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 
-LOGOUT_REDIRECT_URL='welcome:frontpage'
+LOGOUT_REDIRECT_URL = 'welcome:frontpage'

@@ -13,4 +13,5 @@ urlpatterns = [
     path('doc_register/', views.doc_register, name='doc-register'),
     path('user_register/', views.pat_log, name='pat_log'),
 
+
 ]
