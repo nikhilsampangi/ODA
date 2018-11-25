@@ -1,0 +1,87 @@
+
+#welcome {
+	text-align: center;
+	font-family: Permanent Marker;
+	font-size: xx-large;
+	color: #439ACB
+}
+
+/* Heading */
+
+#pg_heading {
+	background-image: url(images/nav_ico-07.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 70px
+}
+
+/*Heading marigin*/
+
+#grid1 {
+	margin: 0 auto;
+	max-width: 75%;
+	border-top: 2px solid #0082c8;
+	border-bottom: 2px solid #0082C8;
+}
+
+#grid1::after {
+	content: '';
+	position: absolute;
+	border-top: 2px solid #0082c8;			
+	left:21%;
+}
+
+/* Health-Tip */
+
+#grid2 {
+	width: 100%;
+	background-image: -webkit-linear-gradient(270deg,rgba(79,172,254,1.00) 0.52%,rgba(0,242,254,1.00) 100%);
+	background-image: -moz-linear-gradient(270deg,rgba(79,172,254,1.00) 0.52%,rgba(0,242,254,1.00) 100%);
+	background-image: -o-linear-gradient(270deg,rgba(79,172,254,1.00) 0.52%,rgba(0,242,254,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(79,172,254,1.00) 0.52%,rgba(0,242,254,1.00) 100%);
+	text-align: center;
+	background-blend-mode: lighten;
+}
+
+#grid2_int {
+	margin: 0 auto;
+	width: 75%;
+	color: #FFFFFF;
+	font-size: x-large;
+}
+
+#grid3{
+	color: #4B6DE7;
+}
+
+#grid3::after{
+	content: url(images/link.png);
+}
+
+#grid4{
+	background-color: #554E4E;
+}
+
+#grid4 img{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;	
+	height: 70%;
+}
+
+/*facts section*/
+
+#facts {
+	width: 100%;
+	background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+	text-align: center;
+	background-blend-mode: lighten;
+}
+
+#facts_int {
+	margin: 0 auto;
+	width: 75%;
+	color: #FFFFFF;
+	font-size: x-large;
+}
