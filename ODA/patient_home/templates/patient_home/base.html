@@ -114,11 +114,33 @@
         </nav>
 
         <!-- Sos Button -->
-        <form action="mail">
-        <div id="sos"><button type="submit" class="btn btn-danger btn-circle btn-xl">
+        <div id="sos">
+          <button type="submit" onclick="getLocation()" class="btn btn-danger btn-circle btn-xl">
             <div id="sos_text">SOS</div>
-        </button></div>
-        </form>
+
+            <p id="demo"></p>
+            <script>
+            var x = document.getElementById("demo");
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+                window.open("http://127.0.0.1:8000/home/mail/"+position.coords.latitude+"/"+position.coords.longitude);
+            }
+            </script>
+
+
+        </button>
+      </div>
+
         <br><br><br><br>
         {% block content %} {% endblock %}
 
