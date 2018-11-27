@@ -89,9 +89,7 @@ def gen_meds(request):
                   {'disease': arry4, 'medicine': arry5, 'ranges': zip(arry4, arry5)})
 
 
-def mail(request):
-    lat = '13.580023'
-    long = '80.087543'
+def mail(request,lat,long):
     send_mail(
         'EMERGENCY',
         'There is an emergency at location : ' + lat +' ' +long,
