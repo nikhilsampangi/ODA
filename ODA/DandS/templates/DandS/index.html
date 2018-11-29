@@ -1,0 +1,18 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>HomePage</title>
+    </head>
+    <body>
+        {% if diseases %}
+            <h1>{{ body_part }} Diseases</h1>
+          <ul>
+              {% for disease in diseases %}
+                  <li><a href="{% url 'info' body_part disease.disease_name %}">{{ disease.disease_name }}</a></li>
+              {% endfor %}
+          </ul>
+        {% else %}
+            <h2>There are no diseases related to this part</h2>
+        {% endif %}
+    </body>
+</html>

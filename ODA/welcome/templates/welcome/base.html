@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'welcome/base.css' %}">
+
+        <!--Bootstrap	-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!--Google Fonts	-->
+
+        {% block css %} {% endblock %}
+
+    </head>
+    <body>
+        <!-- Header -->
+        <nav class="navbar navbar-expand-lg bg-light navbar-light" id="navbar">
+            <div >
+                <a class="navbar-brand" href='{% url 'welcome:home' %}' id="ico_logo">
+                    &nbsp;
+                </a>
+            </div>
+            <div id="ico_div">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <div id="ico_prof_manage">
+                    <a class="nav-link">&nbsp;</a>
+                  </div>
+                </li>
+                <li class="nav-item active">
+                  <div id="ico_sched">
+                    <a class="nav-link">&nbsp;</a>
+                  </div>
+                </li>
+                <li class="nav-item active">
+                  <div id="ico_blog">
+                    <a class="nav-link">&nbsp;</a>
+                  </div>
+                </li>
+                <li class="nav-item active">
+                  <div id="ico_logout">
+                    <a class="nav-link" href="{% url 'welcome:logout' %}">&nbsp;</a>
+                  </div>
+                </li>
+                {% comment %}                <li class="nav-item dropdown">
+                  <div id="ico_appo">
+                    <a class="nav-link" href="#" id="appDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
+
+                    <div class="dropdown-menu" aria-labelledby="appDropdown">
+                      <a class="dropdown-item" href='{% url 'doctor_list_page' %}'>Doctors</a>
+
+                      <div class="dropdown-divider"></div>
+
+                      <a class="dropdown-item" href='{% url 'doctor_locator' %}'>Doctor Locator</a>
+
+                      <div class="dropdown-divider"></div>
+
+                      <a class="dropdown-item" href='{% url 'my_appointments' %}'>My Appointments</a>
+                    </div>
+                  </div>
+                  </li>{% endcomment %}
+              </ul>
+            </div>
+        </nav>
+
+        {% block content %} {% endblock %}
+
+        <!-- Footer -->
+        <div>
+            <footer class="footer-bs">
+                <div class="row">
+                    <div class="col-md-5 footer-brand animated fadeInLeft">
+                        <div id="foot_logo">&nbsp;</div>
+                        <p>Made as a project for ‘Applied Software Engineering-1’ course of Indian Institute of Information Technology Sri City under the supervision of Dr. Balasubramanian (Subu) Kandaswamy, Mr. Ravi Venkataraman, Mr. Prabhat Padhay.</p>
+                        <p>© 2018 ODA, All rights reserved</p>
+                    </div>
+                    <div class="col-md-4 footer-nav animated fadeInUp">
+                        <div class="col-md-6">
+                            <ul class="list">
+                                <li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;&nbsp;About Us</a></li>
+                                <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;Contact</a></li>
+                                <li><a href="#"><i class="fa fa-files-o" aria-hidden="true"></i>&nbsp;&nbsp;Documentation</a></li>
+                                <li><a href="#"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;&nbsp;Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 footer-social animated fadeInDown">
+                        <h4>Follow Us</h4>
+                        <ul>
+                            <li><a href="https://www.facebook.com/sampangi.nikhil" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i>&nbsp;&nbsp;Facebook</a></li>
+                            <li><a href="https://twitter.com/sampanginikhil" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i>&nbsp;&nbsp;Twitter</a></li>
+                            <li><a href="https://www.instagram.com/7sam_nick99/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>&nbsp;&nbsp;Instagram</a></li>
+                            <li><a href="https://github.com/nikhilsampangi/ODA/" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i>&nbsp;&nbsp;GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+        <!-- Javascript -->
+        {% load static %}
+        <script src="{% static 'welcome/base.js' %}"></script>
+
+        <!-- Popper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    </body>
+</html>

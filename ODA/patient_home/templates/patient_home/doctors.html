@@ -1,0 +1,65 @@
+{% extends 'patient_home/base.html' %}
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    {% block css %}
+
+    {% load static %}
+
+	<title>Doctors</title>
+
+	<link rel="stylesheet" href="{% static 'patient_home/doctors.css' %}">
+
+	<!--Google Fonts	-->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oswald" rel="stylesheet">
+
+    <style type="text/css">
+        input:focus, textarea:focus, select:focus{
+            outline: none;
+        }
+    </style>
+
+    {% endblock %}
+</head>
+
+<body>
+    {% block content %}
+
+    <!-- Main Content -->
+	<!-- Search Bar -->
+	<div class="container" id="doc">
+		<div class="row">
+			<p style="font-family: Josefin Sans;font-size:50px">Already know which doctor to pick?<br>Search for that doctor here to take an appointment..</p>
+		</div>
+		
+		<div class="row justify-content-center">
+			<form>
+				<div class="card-body row no-gutters align-items-center">
+					<div class="col input-group">
+						<input id="search_bar" class="form-control form-control-lg border border-primary border-right-0" type="search" placeholder="Search for a doctor" >
+                        <button class="btn btn-lg btn-outline-primary input-group-btn border-left-0" type="submit" style="border-radius: 0px"><i class="fa fa-search" aria-hidden="true"></i></button>
+					</div>&nbsp;&nbsp;
+					<div class="col-auto">
+
+					</div>
+				</div>
+			</form>
+		</div>
+		<br/><br/><br/><br/><br/><br/>
+		<div class="row">
+			<p style="font-family: Josefin Sans;font-size:30px">
+                Or else try:<br>
+                <a href="{% url 'doctor_locator' %}">Doctor Locator</a>
+                for finding doctors near you and <br>
+                <a href="">Doctor Identifier</a>
+                for finding the type of doctor
+            </p>
+		</div>		
+	</div>	
+
+    {% endblock %}
+
+	</body>
+</html>

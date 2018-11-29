@@ -1,0 +1,165 @@
+{% extends 'welcome/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {% block css %}
+        <title>HOME</title>
+        <!--Bootstrap	-->
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'welcome/doc_home_page.css' %}">
+        <link rel="stylesheet" href="{% static 'welcome/home_bootstrap.css' %}">
+
+        <!--Font Awesome-->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        {% endblock %}
+</head>
+<body>
+    {% block content %}
+
+  	{% comment %}<div class="container">
+		<hr>
+		<div class="row">
+		  <div class="col-xs-6">
+			<h1>Dr. {{ user.username }}</h1>
+		  </div>
+		  <div class="col-xs-6">
+              <p class="text-right">
+                  <a href="" class="btn btn-danger">Take Appointment</a><br><br><br>
+                  <a href="{% url 'welcome:logout' %}" class="btn btn-primary btn-hover">lOGOUT</a>
+              </p>
+		  </div>
+		</div>
+		<hr>
+		<div class="row">
+		  <div class="col-xs-7">
+			<div class="media">
+			  <div class="media-left"><a href="#">{% load static %}<img class="media-object img-rounded" src="{% static 'welcome/images/115X115.gif' %}"  alt="..."> </a> </div>
+			  <div class="media-body">
+				<h2 class="media-heading">Dentist</h2>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, neque, in, accusamus optio architecto debitis dolor animi placeat ut ab corporis laboriosam itaque. Nobis, sapiente quo dolorum ut quod possimus doloremque suscipit ad doloribus quam dolor </div>
+			</div>
+		  </div>
+		  <div class="col-xs-5 well">
+			<div class="row">
+			  <div class="col-lg-6">
+				<h4><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> : 123-456-7890</h4>
+			  </div>
+			  <div class="col-lg-6">
+				<h4><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> : doctor@example.com</h4>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-lg-6">
+				<h4><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> : Tada, Sri City</h4>
+			  </div>
+			  <div class="col-lg-6">
+				<h4><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> : www.doctor-site.com </h4>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-8 col-lg-7">
+				<h2>Description</h2>
+				<hr>
+				<h4><span class="label label-default">Clinic</span></h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
+
+				<h4><span class="label label-default">Timings</span></h4>
+				<ul>
+					<li>Week-days - 00:00 - 00:00</li>
+					<li>Saturdays - 00:00 - 00:00</li>
+					<li>Sundays   - Holiday</li>
+				</ul>
+				<h4><span class="label label-default">Info</span></h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
+			</div>
+		  <div class="col-sm-4 col-lg-5">
+			<h2>Today's Schedule</h2>
+			<hr>
+
+			<br><br><br><br><br><br><br><br><br><br>
+
+	   </div>
+		</div>
+		<hr>
+	</div>{% endcomment %}
+    <br><br><br>
+    <div class="container">
+		<hr>
+		<div class="row">
+		  <div class="col-xs-6">
+			<h1><i class="fa fa-heartbeat" aria-hidden="true"></i>  Dr. {{ user.username }}</h1>
+		  </div>
+		  <div class="col-xs-6">
+              <br>
+			<p class="text-right"><a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></p>
+		  </div>
+		</div>
+		<hr>
+		<div class="row">
+		  <div class="col-xs-6">
+			<div class="media">
+			  <div class="media-left">{% load static %}<img class="media-object img-rounded" src="{% static 'welcome/images/115X115.gif' %}"  alt="user_image"></div>
+			  <div class="media-body">
+				<h2 class="media-heading"><i class="fa fa-user-md" aria-hidden="true"></i>  Dentist</h2>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, neque, in, accusamus optio architecto debitis dolor animi placeat ut ab corporis laboriosam itaque. Nobis, sapiente quo dolorum ut quod possimus doloremque suscipit ad doloribus quam dolor </div>
+			</div>
+		  </div>
+		  <div class="col-xs-6 well">
+			<div class="row">
+			  <div class="col-lg-6">
+				<h4><i class="fa fa-phone-square" aria-hidden="true"></i> : 123-456-7890</h4>
+			  </div>
+			  <div class="col-lg-6">
+				<h4><i class="fa fa-envelope" aria-hidden="true"></i> : doctor@example.com</h4>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-lg-6">
+				<h4><i class="fa fa-map-marker" aria-hidden="true"></i>  :  Tada, Sri City</h4>
+			  </div>
+			  <div class="col-lg-6">
+				<h4><i class="fa fa-address-card" aria-hidden="true"></i> : www.doctor-site.com </h4>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-8 col-lg-7">
+				<h2><i class="fa fa-file-text" aria-hidden="true"></i>  Description</h2>
+				<hr>
+				<h3><span class="label label-default"><i class="fa fa-stethoscope" aria-hidden="true"></i> &nbsp;Clinic</span></h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
+
+				<h3><span class="label label-default"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;Timings</span></h3>
+				<ul>
+					<li>Week-days - 00:00 - 00:00</li>
+					<li>Saturdays - 00:00 - 00:00</li>
+					<li>Sundays   - Holiday</li>
+				</ul>
+				<h3><span class="label label-default"><i class="fa fa-info" aria-hidden="true"></i> &nbsp;Info</span></h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
+			</div>
+		  <div class="col-sm-4 col-lg-5">
+			<h2><i class="fa fa-calendar-check-o" aria-hidden="true"></i>  Today's Schedule</h2>
+			<hr>
+
+			<br><br><br><br><br><br><br><br><br><br>
+
+	   </div>
+		</div>
+		<hr>
+	</div>
+    {% load static %}
+    <script src="{% static 'welcome/jquery-1.11.3.min.js' %}"></script>
+    {% endblock %}
+
+</body>
+</html>

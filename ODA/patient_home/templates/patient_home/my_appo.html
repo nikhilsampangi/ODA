@@ -1,0 +1,41 @@
+{% extends 'patient_home/base.html' %}
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+    {% block css %}
+    {% load static %}
+
+	<title>My Appointments</title>
+
+	<link rel="stylesheet" href="{% static 'patient_home/my_appo.css' %}">
+
+	<!--Google Fonts	-->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oswald" rel="stylesheet">
+    {% endblock %}
+	
+</head>
+
+<body>
+    {% block content %}
+
+    <!-- Appointments List -->
+    <div class="container row" id="grid1">
+      <div class="col-xs-6">
+		  <div id="pg_heading">&nbsp;</div>
+        <ul id="app_list">
+        	<li>No upcoming appointments</li>
+        </ul>
+      </div>
+    </div>
+	<br><br><br><br><br><br><br><br><br><br><br>
+
+    {% endblock %}
+
+	</body>
+</html>
+
+
+
+
