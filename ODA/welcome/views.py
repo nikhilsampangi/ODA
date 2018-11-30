@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from welcome.models import Doctors
 from welcome.models import Doctors,Patient_DB
 from patient_home import views
-from welcome.decorators import only_doctor
+from welcome.decorators import *
 
 
 doc_type_list = {"doc_list": ['Audiologist ', 'Allergist', 'Andrologists ', 'Anesthesiologist ', 'Cardiologist ',
@@ -32,15 +32,9 @@ doc_type_list = {"doc_list": ['Audiologist ', 'Allergist', 'Andrologists ', 'Ane
 #         return redirect('welcome:home')
 @only_doctor
 def home(request):
-    if request.user.is_authenticated:
-        try:
-            if request.user.doctors.user_pat == 'no':
-                return render(request, 'welcome/home.html')
-        except:
-                return redirect('welcome:pat_log')
     return render(request, 'welcome/home.html')
 
-
+@user_not_auth
 def front_page(request):
     if request.user.is_authenticated:
         raise PermissionError
@@ -73,6 +67,8 @@ def doc_login(request):
                 return redirect('welcome:home')
         else:
             return HttpResponse('fail')
+    else:
+        raise PermissionDenied
 
 
 def doc_register(request):

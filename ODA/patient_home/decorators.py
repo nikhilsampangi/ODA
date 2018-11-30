@@ -12,5 +12,6 @@ def only_patient(func):
                     raise PermissionDenied
             except:
                 raise PermissionDenied
-
+        else:
+            return redirect('welcome:frontpage')
     return login
