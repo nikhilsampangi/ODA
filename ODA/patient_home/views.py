@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Medical_shop, Stock_availability, General_Medicine, Blood_Bank, Blood_avail
 from django.core.mail import send_mail
 from django.http import HttpResponse
@@ -9,11 +9,19 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import BloodavailSerializer,StockavailabilitySerializer
 from rest_framework import status
-
+from patient_home.decorators import only_patient
 # Create your views here.
+
+
+@only_patient
 @login_required
 def home_page(request):
-    # if request.user.is_authenticated:
+    if request.user.is_authenticated:
+        try:
+            if request.user.patient_db.user_pat == 'yes':
+                return render(request, 'patient_home/home.html')
+        except:
+                return redirect('welcome:frontpage')
     return render(request, 'patient_home/home.html')
 
 @login_required

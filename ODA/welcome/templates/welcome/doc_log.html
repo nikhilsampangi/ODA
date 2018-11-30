@@ -90,8 +90,8 @@
 				<div class="group">
 					<label for="qual" class="label">Qualification</label>
 					<select id="qual" class="input" name="Doctor_Deg">
-						<option value="Md" class="sel_opt">Md</option>
-						<option value="mbbs" class="sel_opt">MBBS</option>
+						<option value="M.B.B.S(" class="sel_opt">Md</option>
+						<option value="B.D.S" class="sel_opt">MBBS</option>
 						<option value="cse" class="sel_opt">cse</option>
 						<option value="ece" class="sel_opt">ece</option>
 					</select>
@@ -99,10 +99,10 @@
 				<div class="group">
 					<label for="specs" class="label">Specalization</label>
 					<select id="specs" class="input" name="Doctor Type">
-						<option value="a" class="sel_opt">a</option>
-						<option value="a" class="sel_opt">b</option>
-						<option value="a" class="sel_opt">c</option>
-						<option value="a" class="sel_opt">d</option>
+                        {% for doc in doc_list %}
+                            <option value={{ doc }} class="sel_opt">{{ doc }}</option>
+                        {% endfor %}
+
 					</select>
 				</div>
 			
@@ -121,3 +121,4 @@
 
 </body>
 </html>
+

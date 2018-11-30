@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from welcome.models import Doctors
 from welcome.models import Doctors,Patient_DB
 from patient_home import views
+from welcome.decorators import only_doctor
 
 
 doc_type_list = {"doc_list": ['Audiologist ', 'Allergist', 'Andrologists ', 'Anesthesiologist ', 'Cardiologist ',
@@ -21,6 +22,7 @@ doc_type_list = {"doc_list": ['Audiologist ', 'Allergist', 'Andrologists ', 'Ane
                               'Reproductive Endocrinologist', 'Urologist ', 'Veterinarian ']}
 
 
+
 # Create your views here.
 # def logout_user(request):
 #     if request.user.is_authenticated:
@@ -28,7 +30,7 @@ doc_type_list = {"doc_list": ['Audiologist ', 'Allergist', 'Andrologists ', 'Ane
 #         return redirect('welcome:home')
 #     else:
 #         return redirect('welcome:home')
-
+@only_doctor
 def home(request):
     if request.user.is_authenticated:
         try:
@@ -41,10 +43,7 @@ def home(request):
 
 def front_page(request):
     if request.user.is_authenticated:
-        if request.user.password :
-            return redirect('welcome:home')
-        else:
-            return redirect('pat_home_page')
+        raise PermissionError
     return render(request, 'welcome/main_page.html')
 
 
@@ -55,7 +54,7 @@ def doctor_page(request):
                 return redirect('welcome:home')
         except:
                 return redirect('welcome:pat_log')
-    return render(request, 'welcome/doc_log.html')
+    return render(request, 'welcome/doc_log.html',doc_type_list)
 
 
 def doc_login(request):
@@ -78,7 +77,7 @@ def doc_login(request):
 
 def doc_register(request):
     if request.user.is_authenticated:
-        redirect()
+        return redirect('welcome:frontpage')
     if request.method == 'POST':
         firstname = request.POST.get('f_name')
         lastname = request.POST.get('l_name')
