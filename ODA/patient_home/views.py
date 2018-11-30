@@ -11,7 +11,12 @@ from rest_framework import status
 # Create your views here.
 
 def home_page(request):
-    return render(request, 'patient_home/home.html')
+    tip = tips.objects.all().values_list('tip')
+    arry1=[]
+    for i in tip:
+        arry1 += [i[0]]
+    return render(request, 'patient_home/home.html',{'tip':arry1})
+
 
 
 def doctor_list(request):
