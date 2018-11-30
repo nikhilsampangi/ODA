@@ -27,3 +27,7 @@ class Blood_avail(models.Model):
     BB_id=models.ForeignKey(Blood_Bank,on_delete=models.PROTECT)
     Blood_grp=models.CharField(max_length=255)
     Availability=models.CharField(max_length=255)
+    
+class tips(models.Model):
+    tip=models.TextField()
+    
