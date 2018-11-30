@@ -29,11 +29,22 @@
                 <br><br><br><br><br>
                 <div id="grid2_int">
                 <h2 class="media-heading">Today's Health Tip</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, neque, in, accusamus optio architecto debitis dolor animi placeat ut ab corporis laboriosam itaque. Nobis, sapiente quo dolorum ut quod possimus doloremque suscipit ad doloribus quam dolor </p>
-                </div>
+                <p id="ti"></p>
+              </div>
                 <br><br><br><br><br>
         </div>
         </div>
+        <script>
+
+            setInterval(ti,1000);
+            function ti(){
+                var tips={{tip|safe}}
+                x=document.getElementById('ti')
+                v=Math.floor((Math.random() * 5) + 0);
+                x.innerHTML=tips[v]
+            }
+        </script>
+
         <hr>
         <div class="container">
             <div class="row">
