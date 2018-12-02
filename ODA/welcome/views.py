@@ -36,11 +36,9 @@ def home(request):
 
 @user_not_auth
 def front_page(request):
-    if request.user.is_authenticated:
-        raise PermissionError
     return render(request, 'welcome/main_page.html')
 
-
+@user_not_auth
 def doctor_page(request):
     if request.user.is_authenticated:
         try:
@@ -123,9 +121,9 @@ def pat_log(request):
             Medical = request.POST.get('med_cond')
             blood = blood_grp + ' ' + blood_type
             user = User.objects.filter(email=request.user.email).first()
-            password = 'qwert12345'
-            print('username :')
-            print(user.username)
+            # password = 'qwert12345'
+            # print('username :')
+            # print(user.username)
             # upadate the full name and delataeila
 
             p = Patient_DB(P_Id=user, Age=age, Gender=gender, Blood_group=blood, Phone_num=phone,

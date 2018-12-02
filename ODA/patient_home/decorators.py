@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import redirect
 
@@ -11,7 +12,10 @@ def only_patient(func):
                 else:
                     raise PermissionDenied
             except:
-                raise PermissionDenied
+                messages.info(request,
+                              f'You are already logged in as patient!, Log out to login from different account') ##add in html
+                raise redirect('pat_home_page')
         else:
+            messages.info(request, f'You are have to login to access respective person')     ##add in html
             return redirect('welcome:frontpage')
     return login

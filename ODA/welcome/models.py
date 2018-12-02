@@ -7,12 +7,12 @@ class Patient_DB(models.Model):
     Age = models.CharField(max_length=3)
     emerg_email = models.CharField(max_length=13,blank=True)
     Gender = models.CharField(max_length=10)
-    Blood_group = models.CharField(max_length=3)
+    Blood_group = models.CharField(max_length=5)                                ##changed the max value
     medical_con = models.CharField(max_length=300, default='None')
     image_url = models.CharField(max_length=400, default='')
     user_pat = models.CharField(max_length=4 ,default='no') #############
     Phone_num = models.CharField(max_length=13,blank=True)
-    Emergency_num = models.CharField(max_length=13,blank=True)
+    Emergency_num = models.CharField(max_length=50,blank=True)
 
 
 class Doctor_Type(models.Model):
