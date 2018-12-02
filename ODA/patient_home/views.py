@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render,redirect
 from .models import Medical_shop, Stock_availability, General_Medicine, Blood_Bank, Blood_avail
 from django.core.mail import send_mail
@@ -10,25 +11,19 @@ from rest_framework.views import APIView
 from .serializers import BloodavailSerializer,StockavailabilitySerializer
 from rest_framework import status
 from patient_home.decorators import only_patient
+from . import forms
 # Create your views here.
 
 
 @only_patient
-@login_required
 def home_page(request):
-    if request.user.is_authenticated:
-        try:
-            if request.user.patient_db.user_pat == 'yes':
-                return render(request, 'patient_home/home.html')
-        except:
-                return redirect('welcome:frontpage')
     return render(request, 'patient_home/home.html')
 
-@login_required
+@only_patient
 def doctor_list(request):
     return render(request, 'patient_home/doctors.html')
 
-@login_required
+@only_patient
 def doctor_locator(request):
     lati = Medical_shop.objects.all().values_list('Lattitude')
     longi = Medical_shop.objects.all().values_list('Longitude')
@@ -44,11 +39,11 @@ def doctor_locator(request):
         arry3 += [i[0]]
     return render(request, 'patient_home/doc_loc.html', {'lat': arry1, 'lng': arry2, 'names': arry3})
 
-@login_required
+@only_patient
 def my_appointments(request):
     return render(request, 'patient_home/my_appo.html')
 
-@login_required
+@only_patient
 def blood_bank(request):
     lat = Blood_Bank.objects.all().values_list('Lat')
     long = Blood_Bank.objects.all().values_list('Long')
@@ -67,7 +62,7 @@ def blood_bank(request):
     print('aasfdsv')
     return render(request, 'patient_home/blood_banks.html', {'lat': arry1, 'lng': arry2, 'names': arry3})
 
-@login_required
+@only_patient
 def pharma_locator(request):
     lati = Medical_shop.objects.all().values_list('Lattitude')
     longi = Medical_shop.objects.all().values_list('Longitude')
@@ -83,7 +78,7 @@ def pharma_locator(request):
         arry3 += [i[0]]
     return render(request, 'patient_home/pharma_loc.html', {'lat': arry1, 'lng': arry2, 'names': arry3})
 
-@login_required
+@only_patient
 def gen_meds(request):
     disease = General_Medicine.objects.all().values_list('Disease')
     medicine = General_Medicine.objects.all().values_list('Medicine')
@@ -129,7 +124,7 @@ class Medicalshoplistview(APIView):
             return Response(serializer.data , status=status.HTTP_201_CREATED)
         return Response(serializer.data,status=status.HTTP_400_BAD_REQUEST)
 
-@login_required
+@only_patient
 def avail(request,shop_name):
     shopid=Medical_shop.objects.all().values_list('shop_id')
     names=Medical_shop.objects.all().values_list('shop_name')
@@ -164,7 +159,7 @@ def avail(request,shop_name):
 
     return render(request, 'patient_home/display_avail.html',{'name': shop_name,'id': x,'medicines': arry1,'stock': arry2,'range': zip(arry1,arry2)})
 
-@login_required
+@only_patient
 def getlocation(request):
     return render(request, 'patient_home/getlocation.html')
 
@@ -178,3 +173,18 @@ def mail(request):
         ['yashukikkuri@gmail.com'],
     );
     return HttpResponse('Mail Sent')
+
+def ProfileUpadate(request):
+    if request.method == 'POST':
+        # u_form = forms.UserUpdateForm(request.POST, instance=request.user)
+        p_form = forms.ProfileUpdateForm(request.POST, instance=request.user.patient_db)
+        if p_form.is_valid():
+            p_form.save()
+            messages.success(request, f'Your account has been updated successfully!')
+        return redirect('profile-upadate')
+    else:
+        # u_form = forms.UserUpdateForm(instance=request.user)
+        p_form = forms.ProfileUpdateForm(instance=request.user.patient_db)
+
+
+    return render(request, 'patient_home/patient_profile_update.html', {'p_form': p_form})
