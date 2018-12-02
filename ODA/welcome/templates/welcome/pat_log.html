@@ -28,7 +28,7 @@
 		<label for="tab-2" class="tab">Registration Step:2</label>
 
         <div class="login-form">
-            <form method="post" action="{% url 'pat_log' %}">
+            <form method="post" action="{% url 'welcome:pat_log' %}">
                 {% csrf_token %}
                 <div class="group">
 					<label for="phn" class="label">Phone Number</label>

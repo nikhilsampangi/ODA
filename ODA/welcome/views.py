@@ -43,9 +43,9 @@ def doctor_page(request):
     if request.user.is_authenticated:
         try:
             if request.user.doctors.user_pat == 'no':
-                return redirect('home')
+                return redirect('welcome:home')
         except:
-                return redirect('pat_log')
+                return redirect('welcome:pat_log')
     return render(request, 'welcome/doc_log.html',doc_type_list)
 
 
@@ -60,9 +60,9 @@ def doc_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return redirect('home')
+                return redirect('welcome:home')
             else:
-                return redirect('home')
+                return redirect('welcome:home')
         else:
             return HttpResponse('fail')
     else:
@@ -71,7 +71,7 @@ def doc_login(request):
 
 def doc_register(request):
     if request.user.is_authenticated:
-        return redirect('frontpage')
+        return redirect('welcome:frontpage')
     if request.method == 'POST':
         firstname = request.POST.get('f_name')
         lastname = request.POST.get('l_name')
@@ -89,7 +89,7 @@ def doc_register(request):
         print(gender)
 
         if User.objects.filter(email=email).exists():
-            return redirect('home')
+            return redirect('welcome:home')
         else:
             user = User.objects.create_user(username=username,
                                             email=email,
@@ -103,7 +103,7 @@ def doc_register(request):
                     login(request, user)
                 else:
                     pass
-            return redirect('home')
+            return redirect('welcome:home')
     return render(request, 'welcome/doc_log.html', doc_type_list)
 
 

@@ -15,7 +15,7 @@ def only_doctor(func):
                 raise PermissionDenied
         else:
             messages.info(request, f'You are have to login to access respective person')     ##add in html
-            return redirect('frontpage')
+            return redirect('welcome:frontpage')
     return login
 
 def user_not_auth(func):
