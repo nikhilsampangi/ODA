@@ -127,7 +127,7 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='918878356264-uls5jsbgrlcthkeo7irlo4307n335jgu.apps.googleusercontent.com'# KEY for google
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'GRVF96gkPEZhO2GEftTER_kW' # Secret Key for google
 
-SOCIAL_AUTH_URL_NAMESPACE = "welcome:social"
+SOCIAL_AUTH_URL_NAMESPACE = "social"
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -155,7 +155,7 @@ STATIC_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'onlinedocapp'
@@ -164,6 +164,6 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 
-LOGIN_URL = 'welcome:frontpage'
-LOGIN_REDIRECT_URL = 'welcome:pat_log'
-LOGOUT_REDIRECT_URL='welcome:frontpage'
+LOGIN_URL = 'frontpage'
+LOGIN_REDIRECT_URL = 'pat_log'
+LOGOUT_REDIRECT_URL='frontpage'

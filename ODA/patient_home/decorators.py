@@ -17,5 +17,5 @@ def only_patient(func):
                 raise redirect('pat_home_page')
         else:
             messages.info(request, f'You are have to login to access respective person')     ##add in html
-            return redirect('welcome:frontpage')
+            return redirect('frontpage')
     return login
