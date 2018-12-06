@@ -166,6 +166,6 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 
-LOGIN_URL = 'frontpage'
+LOGIN_URL = 'welcome:frontpage'
 LOGIN_REDIRECT_URL = 'pat_log'
-LOGOUT_REDIRECT_URL='frontpage'
+LOGOUT_REDIRECT_URL='welcome:frontpage'

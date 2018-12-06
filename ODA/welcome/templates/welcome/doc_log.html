@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600">
 
     {% load static %}
+
   <link rel="stylesheet" href="{% static 'welcome/doc_log.css' %}">
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="{% static 'javaScript/pass_val.js' %}"></script>
 
   
@@ -35,13 +37,10 @@
 				<div class="group">
 					<label for="pass" class="label">Password</label>
 					<input id="pass" type="password" name="doc_pass" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+                    <p id="pass1_err"></p>
 				</div>
 				<div class="group" align="center">
-					<button type="submit" class="btn-hover color-1">Sign In</button>
+					<button id="submit_log" type="submit" class="btn-hover color-1">Sign In</button>
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
@@ -71,6 +70,7 @@
 				<div class="group">
 					<label for="pass3" class="label">Re-type Password</label>
 					<input id="pass3" type="password" class="input" data-type="password" name="con_password">
+                    <p id="pass_err"></p>
 				</div>
 				<div class="group">
 					<label for="uid" class="label">License Number</label>
@@ -78,7 +78,9 @@
 				</div>
                 <div class="group">
 					<label for="phn" class="label">Phone Number</label>
-					<input id="phn" type="text" class="input" data-type="number" name="phone_num">
+					<input id="phn" type="text" class="input" data-type="number" name="phone_num" autocomplete="off">
+                    <p id="phn_err1" ></p>
+                    <p id="phn_err2" style="color: #ff1111 "></p>
 				</div>
                 <div class="group">
 					<label for="gd" class="label">Gender</label>
@@ -108,7 +110,7 @@
 				</div>
 			
 				<div class="group" align="center">
-					<button id="submit" type="submit" class="btn-hover color-1">Sign Up</button>
+					<button id="submit_reg" type="submit" class="btn-hover color-1">Sign Up</button>
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
