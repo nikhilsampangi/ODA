@@ -19,7 +19,10 @@ doc_type_list = {"doc_list": ['Audiologist ', 'Allergist', 'Andrologists ', 'Ane
                               'Oncologist ', 'Ophthalmologist ', 'Orthopedic Surgeon', 'Orthopedist ', 'Primatologist ',
                               'Parasitologist ', 'Pathologists ', 'Pediatrician ', 'Plastic Surgeon', 'Physiologists ',
                               'Physiatrist ', 'Podiatrists ', 'Psychiatrists ', 'Pulmonologist ', 'Radiologists ',
-                              'Reproductive Endocrinologist', 'Urologist ', 'Veterinarian ']}
+                              'Reproductive Endocrinologist', 'Urologist ', 'Veterinarian '],
+                 "doc_deg": ['MBBS', 'BDS','BHMS', 'BAMS', 'DHMS', 'BUMS', 'BVSc & AH', 'B. Pharm', 'BOT', 'BMLT','BPT',
+                            'B.Sc. Nursing', 'BNYS']}
+
 
 
 

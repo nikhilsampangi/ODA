@@ -76,11 +76,11 @@
 					<label for="uid" class="label">License Number</label>
 					<input id="uid" type="text" class="input" data-type="number" name="license">
 				</div>
-                <div class="group">
+                <div class="group" id="phn_div">
 					<label for="phn" class="label">Phone Number</label>
-					<input id="phn" type="text" class="input" data-type="number" name="phone_num" autocomplete="off">
+					<input id="phn" type="text" class="input" data-type="number" name="phone_num" maxlength="10" autocomplete="off">
                     <p id="phn_err1" ></p>
-                    <p id="phn_err2" style="color: #ff1111 "></p>
+                    <p id="phn_err" style="color: #ff1111 "></p>
 				</div>
                 <div class="group">
 					<label for="gd" class="label">Gender</label>
@@ -93,10 +93,9 @@
 				<div class="group">
 					<label for="qual" class="label">Qualification</label>
 					<select id="qual" class="input" name="Doctor_Deg">
-						<option value="M.B.B.S(" class="sel_opt">Md</option>
-						<option value="B.D.S" class="sel_opt">MBBS</option>
-						<option value="cse" class="sel_opt">cse</option>
-						<option value="ece" class="sel_opt">ece</option>
+                        {% for list in doc_deg %}
+						    <option value={{ list }} class="sel_opt">{{ list }}</option>
+						{% endfor %}
 					</select>
 				</div>					
 				<div class="group">

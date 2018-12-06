@@ -48,7 +48,7 @@ $(function () {
             // -------------PHONE_NUMBER_VALIDATION-----------------
 
 
-            if (phone_num.length < 10) {
+            if (phone_num.length != 10 ) {
 
                 $('#phn_err1').html('Phone Number invalid Structure').show().fadeOut(3000);
                 err_val=1;
@@ -76,7 +76,6 @@ $(document).ready(function () {
         $('html, body').animate({
             scrollTop: $("#phn_div").offset().top
         }, 2000);
-
         return false
     }
 
