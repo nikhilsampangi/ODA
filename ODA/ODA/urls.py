@@ -22,6 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('welcome.urls')),
     path('home/',include('patient_home.urls')),
+
+    path('auth/', include('social_django.urls', namespace='social')),  # <- Here
+
     path('Password-Reset/', auth_views.PasswordResetView.as_view(template_name='welcome/password_reset.html'),
          name='password_reset'),
     path('Password-Reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='welcome/password_reset_done.html'),

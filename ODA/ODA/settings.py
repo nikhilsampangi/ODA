@@ -167,5 +167,5 @@ EMAIL_USE_SSL = False
 
 
 LOGIN_URL = 'welcome:frontpage'
-LOGIN_REDIRECT_URL = 'pat_log'
+LOGIN_REDIRECT_URL = 'welcome:pat_log'
 LOGOUT_REDIRECT_URL='welcome:frontpage'
