@@ -2,21 +2,21 @@
 <html lang="en" >
 
 <head>
-  <meta charset="UTF-8">
-  <title>ODA:Doctor</title>
+
+    <meta charset="UTF-8">
+    <title>ODA:Doctor</title>
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600">
 
-        <!--Bootstrap	-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Bootstrap	-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-        <!--Font Awesome-->
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     {% load static %}
-  <link rel="stylesheet" href="{% static 'welcome/doc_log.css' %}">
+    <link rel="stylesheet" href="{% static 'welcome/doc_log.css' %}">
 
-  
 </head>
 
 <body>
@@ -40,10 +40,6 @@
 				<div class="group">
 					<label for="pass" class="label">Password</label>
 					<input id="pass" type="password" name="doc_pass" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Keep me Signed in</label>
 				</div>
 				<div class="group" align="center">
 					<button type="submit" class="btn-hover color-1">Sign In</button>
@@ -80,7 +76,7 @@
 				</div>
 				<div class="group">
 					<label for="loc" class="label">Location</label>
-                    <button id="loc" type="button" class="btn btn-info btn-lg" data-toggle="modal" name="location" data-target="#myModal">Add Location</button>
+                    <button id="loc" type="button" class="btn btn-outline-light btn-block" data-toggle="modal" name="location" data-target="#myModal">Add Location</button>
 				</div>
                 <div class="group">
 					<label for="lat" class="label">Latitude</label>
@@ -139,92 +135,95 @@
 </div>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+<div id="myModal" class="modal fade" role="dialog" style="padding-left: 500px">
+  <div class="modal-dialog modal-lg" id="loc_modal">
 
     <!-- Modal content-->
+      <br><br>
     <div class="modal-content">
-
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body" id="map" style="height: 450px ">
+      <div class="modal-body" id="map" style="height: 450px " data-toggle="tooltip" data-placement="top" title="Click on the desired point to select it, Click on it again to deselect">
            <script>
-      function initMap() {
-        var myLatlng = {lat: -11.363, lng: 80.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: myLatlng
-        });
-        var temp=[0];
-      google.maps.event.addListener(map, 'click', function(event) {
-        console.log(temp);
-        if(temp[1]==0)
-        {
-          temp=[temp[0]];
-          console.log(temp)
-        }
-        if(temp.length==1)
-        {
-          temp.push(1)
-          temp=placeMarker(event.latLng,temp);
-        }
-        console.log(temp)
-});
-function placeMarker(location,temp) {
-    if(temp[1]==1 && temp.length==2)
-    {
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-    document.getElementById("lat").value=location.lat();
-    document.getElementById("log").value=location.lng();
-    google.maps.event.addListener(marker,'click',function() {
-      marker.setMap(null);
-      temp[1]=0;
-      console.log(temp);
-    document.getElementById("lat").value=" ";
-    document.getElementById("log").value=" ";
-    });
-    var infowindow = new google.maps.InfoWindow({
-      content: 'Latitude: ' + location.lat() +
-      '<br>Longitude: ' + location.lng()
-    });
-    infowindow.open(map,marker);
-  }
-  console.log(temp)
-  return temp;
-}
-}
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYl3jkGGMzayse2hTeqApY0qanvqXdmaI&callback=initMap">
-    </script>
-     </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              function initMap() {
+                var myLatlng = {lat: -11.363, lng: 80.044};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 4,
+                  center: myLatlng
+                });
+                var temp=[0];
+              google.maps.event.addListener(map, 'click', function(event) {
+                console.log(temp);
+                if(temp[1]==0)
+                {
+                  temp=[temp[0]];
+                  console.log(temp)
+                }
+                if(temp.length==1)
+                {
+                  temp.push(1)
+                  temp=placeMarker(event.latLng,temp);
+                }
+                console.log(temp)
+              });
+              function placeMarker(location,temp) {
+                if(temp[1]==1 && temp.length==2)
+                {
+                    var marker = new google.maps.Marker({
+                        position: location,
+                        map: map
+                    });
+
+                document.getElementById("lat").value=location.lat();
+                document.getElementById("log").value=location.lng();
+                google.maps.event.addListener(marker,'click',function() {
+                marker.setMap(null);
+                temp[1]=0;
+                console.log(temp);
+                document.getElementById("lat").value=" ";
+                document.getElementById("log").value=" ";
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                content: 'Latitude: ' + location.lat() +
+                '<br>Longitude: ' + location.lng()
+                });
+
+                infowindow.open(map,marker);
+              }
+                  console.log(temp)
+                  return temp;
+                }
+                }
+           </script>
+
+          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYl3jkGGMzayse2hTeqApY0qanvqXdmaI&callback=initMap">
+          </script>
+
       </div>
+
+      <div class="modal-footer" style="margin: auto;">
+        <button type="button" class="btn btn-outline-dark" id="done" data-dismiss="modal" style="border-radius: 0">Done</button>
+{#        <h5 data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltips in a modal</h5>#}
+{#        <a href="#" data-toggle="tooltip" title="Title Here">Hyperlink Text</a>#}
+      </div>
+
     </div>
 
   </div>
-</div>
 
+</div>
 
         <!-- Jquery -->
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
         <!-- Javascript -->
         {% load static %}
-        <script src="{% static 'patient_home/home_page.js' %}"></script>
+        <script src="{% static 'welcome/doc_log.js' %}"></script>
 
         <!-- Popper.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
         <!-- Bootstrap -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
 
 </body>
 </html>
