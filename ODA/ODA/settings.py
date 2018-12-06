@@ -74,6 +74,8 @@ TEMPLATES = [
     },
 ]
 
+SOCIAL_AUTH_URL_NAMESPACE = "social"
+
 WSGI_APPLICATION = 'ODA.wsgi.application'
 
 
