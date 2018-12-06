@@ -56,10 +56,9 @@ a{color:inherit;text-decoration:none}
 }
 .login-html .tab{
 	font-size:22px;
-	margin-right:15px;
-	padding-bottom:5px;
-	margin:0 15px 10px 0;
-	display:inline-block;
+    padding-bottom:5px;
+    margin: 0 15px 10px 0;
+    display:inline-block;
 	border-bottom:2px solid transparent;
 }
 .login-html .sign-in:checked + .tab,
@@ -220,4 +219,21 @@ a{color:inherit;text-decoration:none}
 #done {
     width: 800px;
     outline: none;
+}
+
+/* Dropdown options styling */
+
+#gd *
+{
+ background-color:#FFFFFF;
+}
+
+#qual *
+{
+ background-color:#FFFFFF;
+}
+
+#specs *
+{
+ background-color:#FFFFFF;
 }

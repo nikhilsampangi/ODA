@@ -172,7 +172,7 @@ def mail(request):
         'onlincedocapp@gmail.com',
         ['yashukikkuri@gmail.com'],
     );
-    return HttpResponse('Mail Sent')
+    return render(request, 'patient_home/emergency.html')
 
 def ProfileUpadate(request):
     if request.method == 'POST':
