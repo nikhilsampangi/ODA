@@ -138,3 +138,6 @@ def pat_log(request):
 
 def loc_win(request):
     return render('welcome/loc_win.html')
+
+def schedule(request):
+    return render(request, 'welcome/schedule.html')
