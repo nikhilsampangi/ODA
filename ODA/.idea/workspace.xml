@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82aa1b2-763f-4d3b-ac13-4af055383bc4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ODA/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ODA/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ODA/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ODA/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient_home/templates/patient_home/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/patient_home/templates/patient_home/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome/templates/welcome/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/welcome/templates/welcome/main_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/welcome/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome/static/javaScript/pass_val.js" beforeDir="false" afterPath="$PROJECT_DIR$/welcome/static/javaScript/pass_val.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome/templates/welcome/pat_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/welcome/templates/welcome/pat_log.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,32 +67,32 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="39" />
-          <entry key="js" value="2" />
+          <entry key="html" value="41" />
+          <entry key="js" value="5" />
           <entry key="po" value="1" />
           <entry key="py" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="39" />
-          <entry key="JavaScript" value="2" />
+          <entry key="HTML" value="41" />
+          <entry key="JavaScript" value="5" />
           <entry key="Locale" value="1" />
           <entry key="Python" value="46" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1529" />
-          <entry key="js" value="890" />
+          <entry key="html" value="1676" />
+          <entry key="js" value="1108" />
           <entry key="py" value="2368" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="27" />
-          <entry key="HTML" value="1502" />
-          <entry key="JavaScript" value="890" />
+          <entry key="HTML" value="1649" />
+          <entry key="JavaScript" value="1108" />
           <entry key="Python" value="2368" />
         </counts>
       </usages-collector>
@@ -115,11 +111,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/patient_home/templates/patient_home/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="109" column="73" selection-start-line="109" selection-start-column="73" selection-end-line="109" selection-end-column="73" />
+            <state relative-caret-position="238">
+              <caret line="15" column="95" lean-forward="true" selection-start-line="15" selection-start-column="95" selection-end-line="15" selection-end-column="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/welcome/templates/welcome/pat_log.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/welcome/static/javaScript/pass_val.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -149,13 +163,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/welcome/decorators.py">
+        <entry file="file://$PROJECT_DIR$/welcome/templates/welcome/doc_log.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="12" column="48" selection-start-line="12" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -165,18 +176,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="426">
               <caret line="166" selection-start-line="166" selection-end-line="166" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/welcome/templates/welcome/doc_log.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="49" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
-              <folding>
-                <element signature="n#style#0;n#p#1;n#div#6;n#div#0;n#form#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -195,19 +194,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-888">
               <caret line="45" column="68" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/welcome/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <marker date="1544133068312" expanded="true" signature="1623:1624" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -250,7 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/welcome/static/welcome/main_page.js" />
         <option value="$PROJECT_DIR$/patient_home/static/patient_home/home_page.css" />
         <option value="$PROJECT_DIR$/patient_home/static/patient_home/my_appo.css" />
         <option value="$PROJECT_DIR$/patient_home/static/patient_home/pharma_loc.css" />
@@ -277,7 +262,6 @@
         <option value="$PROJECT_DIR$/patient_home/templates/patient_home/blood_banks.html" />
         <option value="$PROJECT_DIR$/patient_home/templates/patient_home/pharma_loc.html" />
         <option value="$PROJECT_DIR$/patient_home/templates/patient_home/doctors.html" />
-        <option value="$PROJECT_DIR$/welcome/templates/welcome/pat_log.html" />
         <option value="$PROJECT_DIR$/patient_home/templates/patient_home/home.html" />
         <option value="$PROJECT_DIR$/welcome/decorators.py" />
         <option value="$PROJECT_DIR$/welcome/views.py" />
@@ -295,12 +279,14 @@
         <option value="$PROJECT_DIR$/welcome/templates/welcome/home.html" />
         <option value="$PROJECT_DIR$/patient_home/decorators.py" />
         <option value="$PROJECT_DIR$/ODA/settings.py" />
-        <option value="$PROJECT_DIR$/welcome/static/javaScript/pass_val.js" />
         <option value="$PROJECT_DIR$/welcome/templates/welcome/doc_log.html" />
         <option value="$PROJECT_DIR$/welcome/urls.py" />
         <option value="$PROJECT_DIR$/ODA/urls.py" />
         <option value="$PROJECT_DIR$/welcome/templates/welcome/main_page.html" />
         <option value="$PROJECT_DIR$/patient_home/templates/patient_home/base.html" />
+        <option value="$PROJECT_DIR$/patient_home/static/patient_home/javaScript/pass_val.js" />
+        <option value="$PROJECT_DIR$/welcome/templates/welcome/pat_log.html" />
+        <option value="$PROJECT_DIR$/welcome/static/javaScript/pass_val.js" />
       </list>
     </option>
   </component>
@@ -343,6 +329,19 @@
               <item name="ODA" type="b2602c69:ProjectViewProjectNode" />
               <item name="ODA" type="462c0819:PsiDirectoryNode" />
               <item name="patient_home" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ODA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ODA" type="462c0819:PsiDirectoryNode" />
+              <item name="patient_home" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="patient_home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ODA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ODA" type="462c0819:PsiDirectoryNode" />
+              <item name="patient_home" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -361,7 +360,27 @@
               <item name="ODA" type="b2602c69:ProjectViewProjectNode" />
               <item name="ODA" type="462c0819:PsiDirectoryNode" />
               <item name="welcome" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ODA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ODA" type="462c0819:PsiDirectoryNode" />
+              <item name="welcome" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="javaScript" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ODA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ODA" type="462c0819:PsiDirectoryNode" />
+              <item name="welcome" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ODA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ODA" type="462c0819:PsiDirectoryNode" />
+              <item name="welcome" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="welcome" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ODA" type="b2602c69:ProjectViewProjectNode" />
@@ -450,7 +469,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21104388" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21104388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -463,7 +482,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="manage.py@ODA" order="9" visible="true" weight="0.252443" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" visible="true" weight="0.26885247" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" visible="true" weight="0.26885247" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.26885247" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Python Console" order="13" />
@@ -481,13 +500,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/welcome/static/welcome/doc_log.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/welcome/static/welcome/pat_log.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -616,13 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="75" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/welcome/templates/welcome/pat_log.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -756,37 +761,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/welcome/templates/welcome/doc_log.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="49" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#p#1;n#div#6;n#div#0;n#form#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/welcome/static/javaScript/pass_val.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-928">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ODA/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="166" selection-start-line="166" selection-end-line="166" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/welcome/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,6 +782,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/patient_home/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient_home/static/patient_home/javaScript/pass_val.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/welcome/templates/welcome/doc_log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="48" selection-start-line="12" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patient_home/templates/patient_home/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="95" lean-forward="true" selection-start-line="15" selection-start-column="95" selection-end-line="15" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/welcome/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ODA/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -814,19 +832,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/patient_home/urls.py">
+    <entry file="file://$PROJECT_DIR$/welcome/templates/welcome/pat_log.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/patient_home/templates/patient_home/base.html">
+    <entry file="file://$PROJECT_DIR$/welcome/static/javaScript/pass_val.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="109" column="73" selection-start-line="109" selection-start-column="73" selection-end-line="109" selection-end-column="73" />
+        <state relative-caret-position="153">
+          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
         </state>
       </provider>
     </entry>
