@@ -15,7 +15,10 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     {% load static %}
+
     <link rel="stylesheet" href="{% static 'welcome/doc_log.css' %}">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="{% static 'javaScript/pass_val.js' %}"></script>
 
 </head>
 
@@ -40,13 +43,17 @@
 				<div class="group">
 					<label for="pass" class="label">Password</label>
 					<input id="pass" type="password" name="doc_pass" class="input" data-type="password">
+<<<<<<< HEAD
+=======
+                    <p id="pass1_err"></p>
+>>>>>>> VishwanthSetty-patch-1
 				</div>
 				<div class="group" align="center">
-					<button type="submit" class="btn-hover color-1">Sign In</button>
+					<button id="submit_log" type="submit" class="btn-hover color-1">Sign In</button>
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
+					<a href="{% url 'password_reset' %}">Forgot Password?</a>
 				</div>
 			</div>
             </form>
@@ -73,6 +80,7 @@
 				<div class="group">
 					<label for="pass3" class="label">Re-type Password</label>
 					<input id="pass3" type="password" class="input" data-type="password" name="con_password">
+                    <p id="pass_err"></p>
 				</div>
 				<div class="group">
 					<label for="loc" class="label">Location</label>
@@ -91,9 +99,11 @@
 					<label for="uid" class="label">License Number</label>
 					<input id="uid" type="text" class="input" data-type="number" name="license">
 				</div>
-                <div class="group">
+                <div class="group" id="phn_div">
 					<label for="phn" class="label">Phone Number</label>
-					<input id="phn" type="text" class="input" data-type="number" name="phone_num">
+					<input id="phn" type="text" class="input" data-type="number" name="phone_num" maxlength="10" autocomplete="off">
+                    <p id="phn_err1" ></p>
+                    <p id="phn_err" style="color: #ff1111 "></p>
 				</div>
                 <div class="group">
 					<label for="gd" class="label">Gender</label>
@@ -106,8 +116,14 @@
 				<div class="group">
 					<label for="qual" class="label">Qualification</label>
 					<select id="qual" class="input" name="Doctor_Deg">
+<<<<<<< HEAD
 						<option value="M.B.B.S(" class="sel_opt">Md</option>
 						<option value="B.D.S" class="sel_opt">MBBS</option>
+=======
+                        {% for list in doc_deg %}
+						    <option value={{ list }} class="sel_opt">{{ list }}</option>
+						{% endfor %}
+>>>>>>> VishwanthSetty-patch-1
 					</select>
 				</div>					
 				<div class="group">
@@ -121,7 +137,7 @@
 				</div>
 			
 				<div class="group" align="center">
-					<button type="submit" class="btn-hover color-1">Sign Up</button>
+					<button id="submit_reg" type="submit" class="btn-hover color-1">Sign Up</button>
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
