@@ -1,0 +1,45 @@
+.time-slots {
+  position: relative;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.time-slots .radio-inline { padding: 0; margin: 0 5px 10px; }
+
+.time-slots label {
+	cursor: pointer;
+	position: relative;
+}
+
+.time-slots input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.time-slots input[type="radio"] + .time-inner {
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+  width: 150px;
+  padding: 10px;
+  border-radius: 3px;
+	color: #fff;
+  background-color: #159dd2;
+}
+
+.time-slots input[type="radio"]:checked + .time-inner { background-color: #5cb85c; }
+
+.time-slots input[type="radio"]:disabled + .time-inner { background-color: #d9534f; cursor: not-allowed; opacity: 0.6; }
+
+.time-inner h4 { margin-top: 5px; }
+.time-inner h4 span { font-size: 80%; }
+
+.time-inner h5 {
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+  margin: 0px -10px -10px -10px;
+  background: rgb(0,0,0,0.2);
+  padding: 10px;
+}

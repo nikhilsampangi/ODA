@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'welcome',
     'patient_home',
     'rest_framework',
-    'social_django'
+    'social_django',
+    'DandS',
 ]
 
 MIDDLEWARE = [

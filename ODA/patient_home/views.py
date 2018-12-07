@@ -188,3 +188,6 @@ def ProfileUpadate(request):
 
 
     return render(request, 'patient_home/patient_profile_update.html', {'p_form': p_form})
+
+def take_appo(request):
+    return render(request, 'patient_home/doctor_profile.html')
