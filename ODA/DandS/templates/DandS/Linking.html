@@ -1,48 +1,80 @@
+{% extends 'patient_home/base.html' %}
+
 <!Doctype html>
 <html>
  <head>
-  <title>Body Parts</title>
+     {% block css %}
+        {% load static %}
+        <title>Body Parts</title>
+        <link rel="stylesheet" href="{% static 'DandS/linking.css' %}">
+     {% endblock %}
  </head>
  <body>
-   <div style="text-align:center">
-     {% load static %}	
-     <img src="{% static 'DandS/Body.PNG' %}" height="660" width="300" usemap="#parts">
-     <map name="parts">
-     	<div id="Hand">
-           <area = shape="poly" coords="72,120,47,128,30,160,37,192,22,260,40,308,47,325,47,358,79,380,79,377,70,367,69,354,77,359,77,353,70,337,62,327,63,307,63,293,57,252,67,222,72,194" href="{% url 'index' 'Hand' %}">
-    	    <area = shape="poly" coords="230,120,255,128,272,160,265,192,280,260,254,327,253,357,237,373,223,375,223,370,230,368,232,353,223,363,224,346,239,322,237,292,246,250,230,210" href="{% url 'index' 'Hand' %}">
+
+    {% block content %}
+
+        <div style="text-align:left; padding-left: 20%;">
+            {% load static %}
+            <img src="{% static 'DandS/Body.PNG' %}" height="660" width="300" usemap="#parts">
+            <map name="parts">
+                <div id="Hand">
+                   <area = shape="poly" coords="72,120,47,128,30,160,37,192,22,260,40,308,47,325,47,358,79,380,79,377,70,367,69,354,77,359,77,353,70,337,62,327,63,307,63,293,57,252,67,222,72,194" href="{% url 'index' 'Hand' %}">
+                    <area = shape="poly" coords="230,120,255,128,272,160,265,192,280,260,254,327,253,357,237,373,223,375,223,370,230,368,232,353,223,363,224,346,239,322,237,292,246,250,230,210" href="{% url 'index' 'Hand' %}">
+                </div>
+                <div id="Thigh">
+                    <area = shape="poly" coords="80,290,80,455,140,455,150,370,122,360,122,340,100,340" href="{% url 'index' 'Thigh' %}">
+                    <area = shape="poly" coords="220,290,220,455,160,455,150,370,178,360,178,340,200,340" href="{% url 'index' 'Thigh' %}">
+                </div>
+                <div id="Leg">
+                    <area = shape="poly" coords="88,455,88,473,92,480,92,520,106,583,132,583,130,563,139,502,134,475,139,455" href="{% url 'index' 'Leg' %}">
+                    <area = shape="poly" coords="212,455,212,473,208,480,208,520,193,583,167,583,171,563,162,502,167,475,161,455" href="{% url 'index' 'Leg' %}">
+                </div>
+                <div id="Foot">
+                    <area = shape="poly" coords="108,583,97,595,82,605,67,610,70,615,82,619,94,620,136,605,132,583" href="{% url 'index' 'Foot' %}">
+                    <area = shape="poly" coords="191,583,203,596,219,605,232,610,231,615,219,619,207,620,165,605,168,583" href="{% url 'index' 'Foot' %}">
+                </div>
+                <div id="Brain">
+                    <area = shape="circle" coords="150,15,40" href="{% url 'index' 'Brain' %}">
+                </div>
+                <div id="Eye">
+                    <area = shape="circle" coords="130,60,6" href="{% url 'index' 'Eye' %}">
+                    <area = shape="circle" coords="170,60,6" href="{% url 'index' 'Eye' %}">
+                </div>
+                <div id="Nose">
+                    <area = shape="circle" coords="149,70,8" href="{% url 'index' 'Nose' %}">
+                </div>
+                <div id="Ear">
+                    <area = shape="poly" coords="120,51,115,51,115,63,120,69" href="{% url 'index' 'Ear' %}">
+                    <area = shape="poly" coords="187,51,182,51,182,69,187,63" href="{% url 'index' 'Ear' %}">
+                </div>
+                <div id="Trachea">
+        	         <area = shape="rect" coords="143,95,155,145" href="{% url 'index' 'Trachea' %}">
+                </div>
+                <div id="Bronchi">
+        	       <area = shape="poly" coords="154,145,163,150,163,159,149,152,138,159,138,150,144,145" href="{% url 'index' 'Bronchi' %}">
+                </div>
+                <div id="Lung">
+        	         <area = shape="poly" coords="163,150,163,205,210,230,213,232,218,225,218,175,203,145,181,122,169,123,163,137" href="{% url 'index' 'Lung' %}">
+        	         <area = shape="poly"  coords="138,150,138,205,92,230,89,232,84,225,84,172,99,145,120,122,133,123,138,137"  href="{% url 'index' 'Lung' %}">
+                </div>
+                <div id="Liver">
+        	       <area = shape="poly" coords="92,230,87,232,87,255,92,268,108,262,133,255,156,245,159,235,154,222,145,221,135,216,122,216" href="{% url 'index' 'Liver' %}">
+                </div>
+                <div id="Stomach">
+       	           <area = shape="poly" coords="181,245,178,255,176,257,166,254,161,251,156,252,151,254,150,260,154,268,162,274,180,277,190,275,205,269,214,253,214,240,206,230,200,229,188,233" href="{% url 'index' 'Stomach' %}"> 
+               </div>
+               <div id="Oesophagus">
+       	          <area = shape="poly" coords="188,233,182,220,172,222,172,227,181,245" href="{% url 'index' 'Oesophagus' %}">
+               </div>
+               <div id="Heart">
+       	           <area = shape="poly" coords="138,175,138,205,133,210,141,220,154,223,169,224,178,213,163,205,163,175" href="{% url 'index' 'Heart' %}">
+               </div>
+               <div id="Mouth">
+       	           <area = shape="circle" coords="149,85,6" href="{% url 'index' 'Mouth' %}"> 
+               </div>    
+            </map>
         </div>
 
-    	<div id="Thigh">
-            <area = shape="poly" coords="80,290,80,455,140,455,150,370,122,360,122,340,100,340" href="{% url 'index' 'Thigh' %}">
-            <area = shape="poly" coords="220,290,220,455,160,455,150,370,178,360,178,340,200,340" href="{% url 'index' 'Thigh' %}">
-        </div>
-
-        <div id="Leg">
-            <area = shape="poly" coords="88,455,88,473,92,480,92,520,106,583,132,583,130,563,139,502,134,475,139,455" href="{% url 'index' 'Leg' %}">
-            <area = shape="poly" coords="212,455,212,473,208,480,208,520,193,583,167,583,171,563,162,502,167,475,161,455" href="{% url 'index' 'Leg' %}">
-        </div>
-
-        <div id="Foot">
-            <area = shape="poly" coords="108,583,97,595,82,605,67,610,70,615,82,619,94,620,136,605,132,583" href="{% url 'index' 'Foot' %}">
-            <area = shape="poly" coords="191,583,203,596,219,605,232,610,231,615,219,619,207,620,165,605,168,583" href="{% url 'index' 'Foot' %}">
-        </div>
-
-        <div id="Brain">
-            <area = shape="circle" coords="150,15,40" href="{% url 'index' 'Brain' %}">
-        </div>
-
-        <div id="Eye">
-            <area = shape="circle" coords="130,60,6" href="{% url 'index' 'Eye' %}">
-            <area = shape="circle" coords="170,60,6" href="{% url 'index' 'Eye' %}">
-        </div>
-
-        <div id="Nose">
-            <area = shape="circle" coords="149,70,8" href="{% url 'index' 'Nose' %}">
-        </div>
-        <div id="Ear">
-            <area = shape="poly" coords="120,51,115,51,115,63,120,69" href="{% url 'index' 'Ear' %}">
-        </div>
-     </map>
+    {% endblock %}
  </body>
 </html>
