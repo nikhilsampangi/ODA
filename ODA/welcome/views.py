@@ -57,6 +57,7 @@ def doc_login(request):
         email = request.POST.get('doc_email')
         password = request.POST.get('doc_pass')
         user = User.objects.filter(email=email).first()
+        print(user)
         usr = user.username
         user = authenticate(username=usr, password=password)
 
@@ -137,3 +138,9 @@ def pat_log(request):
             return render(request, 'welcome/pat_log.html')
 
     return render(request, 'welcome/pat_log.html')
+
+def loc_win(request):
+    return render('welcome/loc_win.html')
+
+def schedule(request):
+    return render(request, 'welcome/schedule.html')

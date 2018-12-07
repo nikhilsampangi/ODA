@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="{% static 'welcome/doc_home_page.css' %}">
         <link rel="stylesheet" href="{% static 'welcome/home_bootstrap.css' %}">
 
+        <!--Bootstrap	-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
         <!--Font Awesome-->
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         {% endblock %}
@@ -89,7 +92,7 @@
 		<hr>
 	</div>{% endcomment %}
     <br><br><br>
-    <div class="container">
+    <div class="container" id="home_content">
 		<hr>
 		<div class="row">
 		  <div class="col-xs-6">
@@ -113,18 +116,19 @@
 		  <div class="col-xs-6 well">
 			<div class="row">
 			  <div class="col-lg-6">
-				<h4><i class="fa fa-phone-square" aria-hidden="true"></i> : 123-456-7890</h4>
+				<h5><i class="fa fa-phone-square" aria-hidden="true"></i> : 123-456-7890</h5>
 			  </div>
 			  <div class="col-lg-6">
-				<h4><i class="fa fa-envelope" aria-hidden="true"></i> : doctor@example.com</h4>
+				<h5><i class="fa fa-envelope" aria-hidden="true"></i> : doctor@example.com</h5>
 			  </div>
 			</div>
+              <br>
 			<div class="row">
 			  <div class="col-lg-6">
-				<h4><i class="fa fa-map-marker" aria-hidden="true"></i>  :  Tada, Sri City</h4>
+				<h5><i class="fa fa-map-marker" aria-hidden="true"></i>  :  Tada, Sri City</h5>
 			  </div>
 			  <div class="col-lg-6">
-				<h4><i class="fa fa-address-card" aria-hidden="true"></i> : www.doctor-site.com </h4>
+				<h5><i class="fa fa-address-card" aria-hidden="true"></i> : www.doctor-site.com </h5>
 			  </div>
 			</div>
 		  </div>
