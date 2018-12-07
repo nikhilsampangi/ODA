@@ -39,7 +39,7 @@ function CalendarApp(date) {
   this.dayInspirationalQuote = document.getElementById("inspirational-quote");
 
   this.todayIsSpan = document.getElementById("footer-date");
-  // this.eventsCountSpan = document.getElementById("footer-events");
+
   this.dayViewEle = document.getElementById("day-view");
   this.dayViewExitEle = document.getElementById("day-view-exit");
   this.dayViewDateEle = document.getElementById("day-view-date");
@@ -72,15 +72,15 @@ CalendarApp.prototype.addEventListeners = function(){
   this.calendarMonthNextDiv.addEventListener("click", this.showNewMonth.bind(this));
   this.dayViewExitEle.addEventListener("click", this.closeDayWindow.bind(this));
   this.dayViewDateEle.addEventListener("click", this.showNewMonth.bind(this));
-  this.addDayEventEle.addEventListener("click", this.addNewEventBox.bind(this));
-  this.dayEventAddForm.cancelBtn.addEventListener("click", this.closeNewEventBox.bind(this));
-  this.dayEventAddForm.cancelBtn.addEventListener("keyup", this.closeNewEventBox.bind(this));
+  // this.addDayEventEle.addEventListener("click", this.addNewEventBox.bind(this));
+  // this.dayEventAddForm.cancelBtn.addEventListener("click", this.closeNewEventBox.bind(this));
+  // this.dayEventAddForm.cancelBtn.addEventListener("keyup", this.closeNewEventBox.bind(this));
 
-  this.dayEventAddForm.startTime.addEventListener("keyup",this.inputChangeLimiter.bind(this));
-  this.dayEventAddForm.startAMPM.addEventListener("keyup",this.inputChangeLimiter.bind(this));
-  this.dayEventAddForm.endTime.addEventListener("keyup",this.inputChangeLimiter.bind(this));
-  this.dayEventAddForm.endAMPM.addEventListener("keyup",this.inputChangeLimiter.bind(this));
-  this.dayEventAddForm.addBtn.addEventListener("click",this.saveAddNewEvent.bind(this));
+  // this.dayEventAddForm.startTime.addEventListener("keyup",this.inputChangeLimiter.bind(this));
+  // this.dayEventAddForm.startAMPM.addEventListener("keyup",this.inputChangeLimiter.bind(this));
+  // this.dayEventAddForm.endTime.addEventListener("keyup",this.inputChangeLimiter.bind(this));
+  // this.dayEventAddForm.endAMPM.addEventListener("keyup",this.inputChangeLimiter.bind(this));
+  // this.dayEventAddForm.addBtn.addEventListener("click",this.saveAddNewEvent.bind(this));
 
 };
 CalendarApp.prototype.showView = function(date){
@@ -297,6 +297,8 @@ CalendarApp.prototype.addNewEventBox = function(e){
   this.dayEventBoxEle.setAttribute("data-date", target.getAttribute("data-date"));
 
 };
+
+/*
 CalendarApp.prototype.closeNewEventBox = function(e){
 
   if (e && e.keyCode && e.keyCode != 13) return false;
@@ -306,6 +308,8 @@ CalendarApp.prototype.closeNewEventBox = function(e){
   this.resetAddEventBox();
 
 };
+*/
+
 CalendarApp.prototype.saveAddNewEvent = function() {
   var saveErrors = this.validateAddEventInput();
   if ( !saveErrors ) {
