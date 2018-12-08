@@ -12,11 +12,9 @@
   <title>ODA:Patient</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600">
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
     {% load static %}
   <link rel="stylesheet" href="{% static 'welcome/pat_log.css' %}">
-    <script src="{% static 'javaScript/pass_val.js' %}"></script>
 
 </head>
 
@@ -32,15 +30,13 @@
         <div class="login-form">
             <form method="post" action="{% url 'welcome:pat_log' %}">
                 {% csrf_token %}
-                <div class="group" id="phn_div">
+                <div class="group">
 					<label for="phn" class="label">Phone Number</label>
-					<input id="phn" type="text" class="input" data-type="number" name="phone_num" maxlength="10">
-                    <p id="phn_err"></p>
+					<input id="phn" type="text" class="input" data-type="number" name="phone_num">
 				</div>
                 <div class="group">
 					<label for="em_phn" class="label">Emergency Contact</label>
-					<input id="em_phn" type="text" class="input" data-type="number" name="emer_phone_num" maxlength="10">
-                    <p id="emg_phn_err"></p>
+					<input id="em_phn" type="text" class="input" data-type="number" name="emer_phone_num">
 				</div>
                 <div class="group">
 					<label for="em_mail" class="label">Emergency Mail</label>
@@ -48,8 +44,7 @@
 				</div>
                 <div class="group">
 					<label for="age" class="label">Age</label>
-					<input id="age" type="text" class="input" data-type="number" name="Age" maxlength="3">
-                    <p id="age_err"></p>
+					<input id="age" type="text" class="input" data-type="number" name="Age">
 				</div>
                 <div class="group">
 					<label for="gd" class="label">Gender</label>
@@ -79,9 +74,10 @@
 				</div>
 
 				<div class="group" align="center">
-					<button id="submit_user_reg" type="submit" class="btn-hover color-1">Sign Up</button>
+					<button type="submit" class="btn-hover color-1">Sign Up</button>
 				</div>
 				<div class="hr"></div>
+			</div>
             </form>
 		</div>
 	</div>

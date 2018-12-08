@@ -26,7 +26,7 @@
 
 <body>
     {% block content %}
-
+    <br><br>
     <!-- Main Content -->
 	<!-- Search Bar -->
 	<div class="container" id="doc">
@@ -35,17 +35,23 @@
 		</div>
 		
 		<div class="row justify-content-center">
-			<form>
+			<form action="take_appointment" method="post">
+                {% csrf_token %}
 				<div class="card-body row no-gutters align-items-center">
-					<div class="col input-group">
-						<input id="search_bar" class="form-control form-control-lg border border-primary border-right-0" type="search" placeholder="Search for a doctor" >
-                        <button class="btn btn-lg btn-outline-primary input-group-btn border-left-0" type="submit" style="border-radius: 0px"><i class="fa fa-search" aria-hidden="true"></i></button>
+					<div class="col input-group" style="width: 600px;">
+                        <select class="form-control select2" name="doct">
+                           {% for i in  lat %}
+                            <option>{{ i }}</option>
+                            {% endfor %}
+                        </select>
 					</div>&nbsp;&nbsp;
-					<div class="col-auto">
-
-					</div>
+                    <div>
+                        <button class="btn btn-lg btn-outline-primary input-group-btn border-left-0" type="submit">Book Appointment</button>
+                    </div>
 				</div>
+
 			</form>
+
 		</div>
 		<br/><br/><br/><br/><br/><br/>
 		<div class="row">

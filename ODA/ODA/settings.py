@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'welcome',
     'patient_home',
     'rest_framework',
-    'social_django'
+    'social_django',
+    'DandS',
+    'Registration',
 ]
 
 MIDDLEWARE = [
@@ -74,31 +76,29 @@ TEMPLATES = [
     },
 ]
 
-SOCIAL_AUTH_URL_NAMESPACE = "social"
-
 WSGI_APPLICATION = 'ODA.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'mysql.connector.django',
-#         'NAME': 'oda_db',
-#         'USER': 'root',
-#         'PASSWORD': 'iiits@123',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#         'OPTIONS': {'autocommit': True},
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'oda_db',
+        'USER': 'root',
+        'PASSWORD': 'iiits@123',
+        'HOST': 'localhost',
+        'PORT': '',
+        'OPTIONS': {'autocommit': True},
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -129,7 +129,7 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='918878356264-uls5jsbgrlcthkeo7irlo4307n335jgu.apps.googleusercontent.com'# KEY for google
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'GRVF96gkPEZhO2GEftTER_kW' # Secret Key for google
 
-SOCIAL_AUTH_URL_NAMESPACE = "social"
+SOCIAL_AUTH_URL_NAMESPACE = "welcome:social"
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -157,7 +157,7 @@ STATIC_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'onlinedocapp'

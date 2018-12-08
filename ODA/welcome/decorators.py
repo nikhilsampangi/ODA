@@ -10,17 +10,9 @@ def only_doctor(func):
             try:
                 if request.user.doctors.user_pat == 'no':
                    return func(request, *args, **kwargs)
-                else:
-                    raise PermissionDenied
-            except:
-                pass
-            try:
-               if request.user.patient_db.user_pat == 'yes':
-                   return redirect('pat_home_page')
-               else:
-                   raise PermissionDenied
-            except:
-                pass
+            except Exception as ex:
+
+                raise PermissionDenied
         else:
             messages.info(request, f'You are have to login to access respective person')     ##add in html
             return redirect('welcome:frontpage')
@@ -31,20 +23,7 @@ def user_not_auth(func):
         if request.user.is_authenticated is False:
             return func(request, *args, **kwargs)
         else:
-            try:
-                if request.user.doctors.user_pat == 'no':
-                   return redirect('welcome:home')
-                else:
-                    raise PermissionDenied
-            except:
-                pass
-            try:
-               if request.user.patient_db.user_pat == 'yes':
-                   return redirect('pat_home_page')
-               elif request.user.patient_db.user_pat == 'no':
-                   return redirect('welcome:logout')
-            except:
-                pass
-            # return HttpResponse('<h1> Permission Denied <br><br></h1><h2> Logout visit the page </h2>')
+            # messages.success(request, f'First logout to login again again')
+            return HttpResponse('<h1> Permission Denied <br><br></h1><h2> Logout visit the page </h2>')
     return not_log
 

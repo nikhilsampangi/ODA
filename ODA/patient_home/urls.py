@@ -15,7 +15,9 @@ urlpatterns = [
     path('api/medicalshop', views.Medicalshoplistview.as_view(), name='medicalshop'),
     path('avail/<shop_name>/', views.avail, name='avail'),
     path('getlocation/', views.getlocation, name='location'),
-    path('profile/',views.ProfileUpadate,name='profile-upadate')
-
+    path('profile/',views.ProfileUpadate,name='profile-upadate'),
+    path('DandS/',include('DandS.urls')),
+    path('take_appointment',views.take_appo, name='take_appo'),
+    path('booked',views.book, name='book')
 ]
 

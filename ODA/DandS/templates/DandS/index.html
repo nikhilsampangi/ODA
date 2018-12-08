@@ -1,9 +1,14 @@
+{% extends 'patient_home/base.html' %}
+
 <!Doctype html>
 <html>
     <head>
+        {% block css %}
         <title>HomePage</title>
+        {% endblock %}
     </head>
     <body>
+        {% block content %}
         {% if diseases %}
             <h1>{{ body_part }} Diseases</h1>
           <ul>
@@ -14,5 +19,6 @@
         {% else %}
             <h2>There are no diseases related to this part</h2>
         {% endif %}
+        {% endblock %}
     </body>
 </html>

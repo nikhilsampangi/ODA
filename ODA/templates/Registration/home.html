@@ -1,0 +1,23 @@
+{% extends 'Registration/base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <b>Welcome Mr.{{ user.username }}!</b>
+  <p>
+      <b>Welcome to Med_Shop page !!!</b>
+      <br><br>
+      <a href="{% url 'Registration:userlogout' %}">logout</a>
+      <br>
+      <p><a href="{% url 'password_reset' %}">reset password</a></p>
+        <br><br>
+      <a href="{% url 'Registration:data' %}">ADD SHOP</a>
+  </p>
+{% else %}
+  <p>You are not logged in.Please click below.</p>
+    <a href="{% url 'Registration:userlogin' %}">Login</a><br><br><i><b>OR</b></i>
+    <br><br>
+    <a href="{% url 'Registration:signup' %}">Signup</a>
+{% endif %}
+{% endblock %}

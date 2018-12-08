@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data form</title>
+</head>
+<body>
+
+<form action="{% url 'Registration:data1' %}" method="post">
+    {%  csrf_token %}
+
+    <h>
+        <b>SHOP DATA</b>
+    </h>
+
+    <br><br>
+
+    Shopid:<br>
+    <input type="number" name="sid" id="sid" required>
+
+    <br>
+
+    shopname:<br>
+    <input type="text" name="sname" id="sname" required>
+
+    <br>
+
+    lattitude:<br>
+    <input type="number" name="lati" id="lati" required>
+
+    <br>
+
+    longitude:<br>
+    <input type="number" name="longi" id="longi" required>
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+    <br><br>
+
+    <a href="{% url 'Registration:upload' %}">Add Stock</a>
+<!--    <h><b>STOCK DATA</b></h><br><br>
+    shopid:<br>
+    <input type="number" name="shopid id" id="shopid"><br>
+    med id:<br>
+    <input type="number" name="med id" id="med id"><br>
+    med name:<br>
+    <input type="text" name="med name" id="med name"><br>
+    stock:<br>
+    <input type="number" name="stock" id="stock"><br><br>
+-->
+</form>
+
+</body>
+</html>

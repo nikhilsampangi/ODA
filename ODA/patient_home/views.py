@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import render,redirect
-from .models import Medical_shop, Stock_availability, General_Medicine, Blood_Bank, Blood_avail
+from .models import Medical_shop, Stock_availability, General_Medicine, Blood_Bank, Blood_avail,tips,facts
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
@@ -13,15 +13,41 @@ from rest_framework import status
 from patient_home.decorators import only_patient
 from . import forms
 # Create your views here.
+from welcome.models import Patient_DB,Doctors,Appointment
 
 
 @only_patient
 def home_page(request):
-    return render(request, 'patient_home/home.html')
+    pi=request.user.patient_db.pk
+    print(pi)
+    lati=Appointment.objects.all().values_list('P_Id','Date','D_Id')
+    arry1=[]
+    arry2=[]
+    for i in lati:
+        if(i[0]==pi):
+            arry1+=[i[1]]
+            doc=Doctors.objects.get(pk=i[2])
+            print(doc)
+            arry2+=[doc]
+    tip = tips.objects.all().values_list('tip')
+    arry3 = []
+    for i in tip:
+        arry3 += [i[0]]
+    fact = facts.objects.all().values_list('fact')
+    arry4 = []
+    for i in tip:
+        arry4 += [i[0]]
+
+    return render(request, 'patient_home/home.html',{'dte': zip(arry1,arry2),'tip':arry3,'fact':arry4})
 
 @only_patient
 def doctor_list(request):
-    return render(request, 'patient_home/doctors.html')
+    lati=Doctors.objects.all()
+    arry1=[]
+    for i in lati:
+        arry1+=[i.D_Id]
+
+    return render(request, 'patient_home/doctors.html',{'lat':arry1})
 
 @only_patient
 def doctor_locator(request):
@@ -174,20 +200,44 @@ def mail(request):
     );
     return render(request, 'patient_home/emergency.html')
 
-
-@only_patient
 def ProfileUpadate(request):
     if request.method == 'POST':
-        u_form = forms.User_update_Form(request.POST, instance=request.user)
+        # u_form = forms.UserUpdateForm(request.POST, instance=request.user)
         p_form = forms.ProfileUpdateForm(request.POST, instance=request.user.patient_db)
-        if p_form.is_valid() and u_form.is_valid():
-            u_form.save()
+        if p_form.is_valid():
             p_form.save()
             messages.success(request, f'Your account has been updated successfully!')
-        return redirect('pat_home_page')
+        return redirect('profile-upadate')
     else:
-        u_form = forms.User_update_Form(instance=request.user)
+        # u_form = forms.UserUpdateForm(instance=request.user)
         p_form = forms.ProfileUpdateForm(instance=request.user.patient_db)
 
 
-    return render(request, 'patient_home/patient_profile_update.html', {'p_form': p_form,'u_form':u_form})
+    return render(request, 'patient_home/patient_profile_update.html', {'p_form': p_form})
+
+def take_appo(request):
+    doc=request.POST.get('doct')
+    arry1=[doc]
+    request.session['doc']=doc
+    return render(request, 'patient_home/doctor_profile.html',{'doc':arry1})
+
+def book(request):
+    tie=request.POST['time']
+    dae=request.POST['date']
+    patient=request.user.patient_db
+    arry1=[]
+    lati=Doctors.objects.all()
+    doc=request.session['doc']
+    for i in lati:
+        if(doc==str(i.D_Id)):
+            arry1=[i.D_Id]
+
+    arry2=[]
+    lati=Patient_DB.objects.all()
+    for i in lati:
+        if(i.P_Id==patient.P_Id):
+            arry2+=[i.P_Id]
+    doct=Doctors.objects.get(pk=arry1[0])
+    d=Appointment(P_Id=patient,D_Id=doct,Date=dae,slots=tie)
+    d.save()
+    return HttpResponse("Booked   "+tie+'  '+dae)

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Login</h1>
+    <form method="post" action="{% url 'Registration:userlogin' %}">
+    {% csrf_token %}
+        <label>username:
+        <input type="text" required name="username">
+            </label>
+        <label>
+            password:
+            <input type="password" required name="password">
+        </label>
+        <button type="submit">Login</button><br>
+         <p><a href="{% url 'password_reset' %}">Forgot password ?</a></p>
+        <br><br>
+
+
+    </form>
+{% endblock %}

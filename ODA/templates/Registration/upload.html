@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>
+            UPLOAD Excel
+        </title>
+    </head>
+    <body style="margin-top: 30px;margin-left: 30px;">
+
+        <form action="{% url "Registration:upload" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p><b>Upload Stock data through Excel file</b></p>
+            <input type="file"
+                   title="Upload excel file"
+                   name="excel_file"
+                   required="required">
+            </input><br><br>
+            <input type="submit"
+                   value="Upload">
+            </input>
+        </form>
+        <hr>
+    </body>
+</html>
