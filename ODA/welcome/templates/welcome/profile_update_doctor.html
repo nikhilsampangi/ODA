@@ -24,20 +24,19 @@
     <br><br><br>
     <div class="container" id="home_content">
 		<hr>
-		<div class="row">
-		  <div class="col-xs-6">
-              {% if messages %}
-                {% for msg in messages %}
-                    {% if msg.tags == 'success' %}
-                        <p style="color:greenyellow">  {{ msg }}    </p>
-                    {% endif %}
-                {% endfor %}
-              {% endif %}
-			<h1><i class="fa fa-heartbeat" aria-hidden="true"></i>  Dr. {{ user.username }}</h1>
+
+          <form method="POST" enctype="multipart/form-data">
+              <div class="row">
+		        <div class="col-xs-6">
+              {% csrf_token %}
+              <h1 ><i class="fa fa-heartbeat" aria-hidden="true"></i> Your Name<br>&nbsp;&nbsp;{{ u_form.username }}  </h1>
+		    </div>
+            <div class="col-xs-6" style="right: 0" >
+              <br>
+			<button class="button_save" style="right: 0" type="submit">Save</button>
 		  </div>
 		  <div class="col-xs-6">
               <br>
-			<p class="text-right"><a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></p>
 		  </div>
 		</div>
 		<hr>
@@ -46,17 +45,17 @@
 			<div class="media">
 			  <div class="media-left">{% load static %}<img class="media-object img-rounded" src="{% static 'welcome/images/115X115.gif' %}"  alt="user_image"></div>
 			  <div class="media-body">
-				<h2 class="media-heading"><i class="fa fa-user-md" aria-hidden="true"></i>  {{ user.doctors.doc_type }}</h2>
-				{{ user.doctors.Degrees }} </div>
+				<h2 class="media-heading"><i class="fa fa-user-md" aria-hidden="true"></i> Doctor Type {{ d_form.doc_type }}</h2>
+				    degree: {{ d_form.Degrees }}<br>Info:<br> {{ d_form.Desc }} </div>
 			</div>
 		  </div>
 		  <div class="col-xs-6 well">
 			<div class="row">
 			  <div class="col-lg-6">
-				<h5><i class="fa fa-phone-square" aria-hidden="true"></i> : 123-456-7890</h5>
+				<h5><i class="fa fa-phone-square" aria-hidden="true"></i> : {{ d_form.Phone }}</h5>
 			  </div>
 			  <div class="col-lg-6">
-				<h5><i class="fa fa-envelope" aria-hidden="true"></i> : doctor@example.com</h5>
+				<h5><i class="fa fa-envelope" aria-hidden="true"></i> : {{ user.email }}</h5>
 			  </div>
 			</div>
               <br>
@@ -65,7 +64,7 @@
 				<h5><i class="fa fa-map-marker" aria-hidden="true"></i>  :  Tada, Sri City</h5>
 			  </div>
 			  <div class="col-lg-6">
-				<h5><i class="fa fa-address-card" aria-hidden="true"></i> : www.doctor-site.com </h5>
+				<h5><i class="fa fa-address-card" aria-hidden="true"></i> : {{ d_form.d_website }} </h5>
 			  </div>
 			</div>
 		  </div>
@@ -76,8 +75,7 @@
 				<h2><i class="fa fa-file-text" aria-hidden="true"></i>  Description</h2>
 				<hr>
 				<h3><span class="label label-default"><i class="fa fa-stethoscope" aria-hidden="true"></i> &nbsp;Clinic</span></h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
+                {{ d_form.About_Clinic }}
 
 				<h3><span class="label label-default"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;Timings</span></h3>
 				<ul>
@@ -86,21 +84,44 @@
 					<li>Sundays   - Holiday</li>
 				</ul>
 				<h3><span class="label label-default"><i class="fa fa-info" aria-hidden="true"></i> &nbsp;Info</span></h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
+				<p>{{ d_form.Other_info }}</p>
+                <div style="text-align:center">
+                    <button class="button_save" type="submit">Save</button>
+                </div>
 			</div>
+
 		  <div class="col-sm-4 col-lg-5">
 			<h2><i class="fa fa-calendar-check-o" aria-hidden="true"></i>  Today's Schedule</h2>
 			<hr>
 
 			<br><br><br><br><br><br><br><br><br><br>
 
+
 	   </div>
+
 		</div>
-		<hr>
-	</div>
-    {% load static %}
+		</form>
+    </div>
+        <hr>
     <script src="{% static 'welcome/jquery-1.11.3.min.js' %}"></script>
-    {% endblock %}
+
 
 </body>
 </html>
+{% endblock %}
+{#{% block content %}#}
+{#    <br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br><br>#}
+{#    <br>#}
+{#<form method="post">#}
+{#    {% csrf_token %}#}
+{#        {{ u_form }}#}
+{#        {{ p_form }}#}
+{#        <input type="submit" value="Update">#}
+{#</form>#}
+{#{% endblock %}#}

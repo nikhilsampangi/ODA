@@ -9,12 +9,26 @@ def only_patient(func):
             try:
                 if request.user.patient_db.user_pat == 'yes':
                    return func(request, *args, **kwargs)
+                elif request.user.patient_db.user_pat == 'no':
+                    return redirect('welcome:pat_log')
                 else:
                     raise PermissionDenied
             except:
-                messages.info(request,
-                              f'You are already logged in as patient!, Log out to login from different account') ##add in html
-                raise redirect('pat_home_page')
+                pass
+            try:
+               if request.user.doctors.user_pat == 'no':
+                   return redirect('welcome:home')
+               else:
+                   raise PermissionDenied
+            except:
+                pass
+                # if request.user.patient_db.user_pat == 'no':
+                #     return redirect('welcome:pat_log')
+                # else:
+                #     raise PermissionDenied
+                # messages.info(request,
+                #               f'You are already logged in as patient!, Log out to login from different account') ##add in html
+                # raise redirect('pat_home_page')
         else:
             messages.info(request, f'You are have to login to access respective person')     ##add in html
             return redirect('welcome:frontpage')

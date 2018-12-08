@@ -1,25 +1,52 @@
-<!DOCTYPE html>
+{% extends 'patient_home/base.html' %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block css %}
     <title>Patient Profile</title>
+        {% load static %}
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="{% static 'patient_home/update_profile.css' %}">
+    {% endblock %}
 </head>
 <body>
+    {% block content %}
+<div align="center">
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ p_form }}
-        <input type="submit" value="Update">
-    </form>
-    
+        <div class="w3-container " >
 
-    {% if messages %}
-        {% for msg in messages %}
-            {% if msg.tags == 'success' %}
-                {{ msg }}
-            {% endif %}
-        {% endfor %}
-        
-    
-    {% endif %}
+          <div class="w3-card-4" style="width:50%;">
+            <header class="w3-container w3-dark-gray w3-padding-12">
+              <h1 class="font_profile" style="text-align: center"> Your Profile</h1>
+            </header>
+
+            <div class="w3-container"  style="text-align: center">
+                <br><br>
+                <label class="font"><b>First Name : </b>{{ u_form.first_name }}<br><br>
+                <label class="font"><b>Last Name : </b>{{ u_form.last_name }}<br><br>
+                <label class="font"><b>Mobile Number :</b>{{ p_form.Phone_num }}<br><br>
+                <label class="font"><b>Emergency Mobile Number : </b>{{ p_form.Emergency_num }}<br><br>
+                <label class="font"><b>Emergency Email : </b>{{ p_form.emerg_email }}<br><br>
+                <label class="font"><b>Medical Condition : </b>{{ p_form.medical_con }}<br><br>
+
+            </div>
+
+            <footer class="w3-container w3-dark-gray ">
+                 <button class="w3-button w3-block w3-hover-cyan w3-padding-16 font_save" style="width: 100%"  type="submit">Save</button>
+{#                <input type="submit" value="Update">#}
+            </footer>
+          </div>
+        </div>
+    </form>
+</div>
+        <br>
+        <br>
+    {% endblock %}
 </body>
 </html>

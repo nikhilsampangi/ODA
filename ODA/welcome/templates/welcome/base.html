@@ -28,7 +28,7 @@
               <ul class="navbar-nav">
                 <li class="nav-item active">
                   <div id="ico_prof_manage">
-                    <a class="nav-link">&nbsp;</a>
+                    <a class="nav-link" href="{% url 'welcome:profile-update' %}">&nbsp;</a>
                   </div>
                 </li>
                 <li class="nav-item active">
@@ -46,23 +46,7 @@
                     <a class="nav-link" href="{% url 'welcome:logout' %}">&nbsp;</a>
                   </div>
                 </li>
-                {% comment %}                <li class="nav-item dropdown">
-                  <div id="ico_appo">
-                    <a class="nav-link" href="#" id="appDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</a>
 
-                    <div class="dropdown-menu" aria-labelledby="appDropdown">
-                      <a class="dropdown-item" href='{% url 'doctor_list_page' %}'>Doctors</a>
-
-                      <div class="dropdown-divider"></div>
-
-                      <a class="dropdown-item" href='{% url 'doctor_locator' %}'>Doctor Locator</a>
-
-                      <div class="dropdown-divider"></div>
-
-                      <a class="dropdown-item" href='{% url 'my_appointments' %}'>My Appointments</a>
-                    </div>
-                  </div>
-                  </li>{% endcomment %}
               </ul>
             </div>
         </nav>

@@ -13,9 +13,15 @@
     <body>
 
         {% block content %}
-
         <!-- Page Content -->
         <div id="main_cont">
+        {% if messages %}
+          {% for msg in messages %}
+                    {% if msg.tags == 'success' %}
+                        <p id="welcome" style="color: #adff00; font-size: 23px ">  {{ msg }}    </p>
+                    {% endif %}
+          {% endfor %}
+        {% endif %}
         <p id="welcome">Hello {{ user.first_name }}! Welcome to ODA!!</p>
         <div class="container row" id="grid1">
           <div class="col-xs-6">

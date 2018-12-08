@@ -16,7 +16,7 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'welcome/doc_home_page.css' %}">
-    <link rel="stylesheet/css" href="{% static 'welcome/doc_log.css' %}">
+    <link rel="stylesheet" href="{% static 'welcome/doc_log.css' %}">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="{% static 'javaScript/pass_val.js' %}"></script>
 
@@ -27,6 +27,15 @@
   <div class="login-wrap">
 	<div class="login-html">
 		<div id="t_msg">Hello doc! Welcome to ODA!!</div><br><br>
+
+        {% if messages %}
+        {% for msg in messages %}
+            {% if msg.tags == 'info' %}
+                {{ msg }}<br><br>
+            {% endif %}
+        {% endfor %}
+        {% endif %}
+
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked>
 		<label for="tab-1" class="tab">Sign In</label>
 		<input id="tab-2" type="radio" name="tab" class="sign-up">
@@ -85,12 +94,10 @@
                     <button id="loc" type="button" class="btn btn-outline-light btn-block" data-toggle="modal" name="location" data-target="#myModal">Add Location</button>
 				</div>
                 <div class="group">
-					<label for="lat" class="label">Latitude</label>
-                    <input id="lat" type="text" class="input" name="lat" value=" ">
+                    <input id="lat" type="hidden" class="input" name="lat" value=" ">
 				</div>
                 <div class="group">
-					<label for="log" class="label">Longitude</label>
-                    <input id="log" type="text" class="input" name="log" value=" ">
+                    <input id="log" type="hidden" class="input" name="log" value=" ">
 				</div>
 
 				<div class="group">

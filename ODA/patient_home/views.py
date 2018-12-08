@@ -174,17 +174,20 @@ def mail(request):
     );
     return render(request, 'patient_home/emergency.html')
 
+
+@only_patient
 def ProfileUpadate(request):
     if request.method == 'POST':
-        # u_form = forms.UserUpdateForm(request.POST, instance=request.user)
+        u_form = forms.User_update_Form(request.POST, instance=request.user)
         p_form = forms.ProfileUpdateForm(request.POST, instance=request.user.patient_db)
-        if p_form.is_valid():
+        if p_form.is_valid() and u_form.is_valid():
+            u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated successfully!')
-        return redirect('profile-upadate')
+        return redirect('pat_home_page')
     else:
-        # u_form = forms.UserUpdateForm(instance=request.user)
+        u_form = forms.User_update_Form(instance=request.user)
         p_form = forms.ProfileUpdateForm(instance=request.user.patient_db)
 
 
-    return render(request, 'patient_home/patient_profile_update.html', {'p_form': p_form})
+    return render(request, 'patient_home/patient_profile_update.html', {'p_form': p_form,'u_form':u_form})

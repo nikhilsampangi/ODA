@@ -1,3 +1,18 @@
-#home_content {
-
+.button_save {
+    background-color: darkslategray; /* Green */
+    border: dodgerblue;
+    color: white;
+    padding: 20px 60px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 4px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.button_save:hover{
+    background-color: dodgerblue; /* Green */
+    color: black;
 }
