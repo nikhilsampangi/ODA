@@ -14,5 +14,6 @@ urlpatterns = [
     path('doc_login/', views.doc_login, name='doc-login'),
     path('doc_register/', views.doc_register, name='doc-register'),
     path('user_register/', views.pat_log, name='pat_log'),
+    path('Profile_update/', views.pro_upd_doc, name='profile-update'),
     path('doc_home/Schedule_manager/', views.schedule, name='schedule'),
 ]

@@ -17,6 +17,13 @@
         <!-- Page Content -->
         <div id="main_cont">
             <!-- Trigger the modal with a button -->
+            {% if messages %}
+              {% for msg in messages %}
+                        {% if msg.tags == 'success' %}
+                            <p id="welcome" style="color: #adff00; font-size: 23px ">  {{ msg }}    </p>
+                        {% endif %}
+              {% endfor %}
+            {% endif %}
             <div style="text-align: center;">
                 <a data-toggle="modal" href="#myModal" id="tut_link">
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>

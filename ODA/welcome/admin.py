@@ -4,6 +4,6 @@ from .models import *
 
 admin.site.register(Patient_DB)
 admin.site.register(Hospital_Details)
-admin.site.register(Doctor_Type)
+# admin.site.register(Doctor_Type)
 admin.site.register(Doctors)
 admin.site.register(Appointment)
