@@ -1,19 +1,4 @@
 $(function () {
-        $("#submit_log").click(function () {
-            var password = $("#pass").val();
-            var err_val=0;
-            if (password == "") {
-
-                $('#pass1_err').html('Invalid password').show().fadeOut(2000);
-                return false;
-            }
-
-            return true;
-        });
-    });
-
-
-$(function () {
         $("#submit_reg").click(function () {
             var fname=$("#fname").val();
             var password = $("#pass2").val();

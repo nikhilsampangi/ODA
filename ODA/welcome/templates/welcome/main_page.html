@@ -23,6 +23,16 @@
 
     <body class="bg">
             <div class="mt1" align="center">
+                {% if messages %}
+                {% for msg in messages %}
+                    {% if msg.tags == 'success' %}
+                        <p style="color:green">  {{ msg }}    </p>
+                    {% endif %}
+                    {% if msg.tags == 'error' %}
+                        <p style="color:green">  {{ msg }}    </p>
+                    {% endif %}
+                {% endfor %}
+              {% endif %}
               <table>
                 <tr>
                     <div class="animated fadeIn slower">{% load static %}<img class="m1" src="{% static 'welcome/images/ODA-02-01.png' %}" alt="logo"></div>

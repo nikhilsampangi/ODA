@@ -101,6 +101,9 @@
                     {% if msg.tags == 'success' %}
                         <p style="color:greenyellow">  {{ msg }}    </p>
                     {% endif %}
+                    {% if msg.tags == 'error' %}
+                        <p style="color:greenyellow">  {{ msg }}    </p>
+                    {% endif %}
                 {% endfor %}
               {% endif %}
 			<h1><i class="fa fa-heartbeat" aria-hidden="true"></i>  Dr. {{ user.username }}</h1>
@@ -117,7 +120,7 @@
 			  <div class="media-left">{% load static %}<img class="media-object img-rounded" src="{% static 'welcome/images/115X115.gif' %}"  alt="user_image"></div>
 			  <div class="media-body">
 				<h2 class="media-heading"><i class="fa fa-user-md" aria-hidden="true"></i>  {{ user.doctors.doc_type }} </h2>
-				{{ user.doctors.Degrees }} </div>
+				{{ user.doctors.Degrees }}<br>{{ user.doctors.Desc }} </div>
 			</div>
 		  </div>
 		  <div class="col-xs-6 well">
@@ -126,7 +129,7 @@
 				<h5><i class="fa fa-phone-square" aria-hidden="true"></i> : {{ user.doctors.Phone }}</h5>
 			  </div>
 			  <div class="col-lg-6">
-				<h5><i class="fa fa-envelope" aria-hidden="true"></i> : user.email</h5>
+				<h5><i class="fa fa-envelope" aria-hidden="true"></i> : {{ user.email }}</h5>
 			  </div>
 			</div>
               <br>
@@ -135,7 +138,7 @@
 				<h5><i class="fa fa-map-marker" aria-hidden="true"></i>  :  Tada, Sri City</h5>
 			  </div>
 			  <div class="col-lg-6">
-				<h5><i class="fa fa-address-card" aria-hidden="true"></i> : {{ user.doctor.d_website }} </h5>
+				<h5><i class="fa fa-address-card" aria-hidden="true"></i> : {{ user.doctors.d_website }} </h5>
 			  </div>
 			</div>
 		  </div>
@@ -146,8 +149,7 @@
 				<h2><i class="fa fa-file-text" aria-hidden="true"></i>  Description</h2>
 				<hr>
 				<h3><span class="label label-default"><i class="fa fa-stethoscope" aria-hidden="true"></i> &nbsp;Clinic</span></h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, recusandae, corporis, tempore nam fugit deleniti sequi excepturi quod repellat laboriosam soluta laudantium amet dicta non ratione distinctio nihil dignissimos esse!</p>
+                <p>{{ user.doctors.About_Clinic }}</p>
 
 				<h3><span class="label label-default"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;Timings</span></h3>
 				<ul>

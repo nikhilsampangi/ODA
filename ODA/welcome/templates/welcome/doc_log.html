@@ -38,6 +38,10 @@
             {% if msg.tags == 'info' %}
                 {{ msg }}<br><br>
             {% endif %}
+            {% if msg.tags == 'error' %}
+                {{ msg }}<br><br>
+            {% endif %}Z
+
         {% endfor %}
         {% endif %}
 

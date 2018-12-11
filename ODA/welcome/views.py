@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from welcome.models import Doctors
 from welcome.models import Doctors,Patient_DB,Appointment
 from patient_home import views
+from django.contrib import messages
 from welcome.decorators import *
 from . import forms
 
@@ -69,20 +70,25 @@ def doctor_page(request):
 def doc_login(request):
     if request.method == 'POST':
         email = request.POST.get('doc_email')
-        password = request.POST.get('doc_pass')
-        user = User.objects.filter(email=email).first()
-        print(user)
-        usr = user.username
-        user = authenticate(username=usr, password=password)
+        if(User.objects.filter(email=email).exists()):
+            password = request.POST.get('doc_pass')
+            user = User.objects.filter(email=email).first()
 
-        if user:
-            if user.is_active:
-                login(request, user)
-                return redirect('welcome:home')
+            user = authenticate(username=user.username, password=password)
+
+            if user:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('welcome:home')
+                else:
+                    return redirect('welcome:home')
             else:
-                return redirect('welcome:home')
+                messages.error(request, f'INVALID EMAIL OR PASSWORD')
+                return redirect('welcome:doc-l-r')
         else:
-            return HttpResponse('fail')
+            messages.error(request, f'INVALID EMAIL')
+            return redirect('welcome:doc-l-r')
+
     else:
         raise PermissionDenied
 
@@ -127,6 +133,13 @@ def doc_register(request):
 
 def pat_log(request):
     if request.user.is_authenticated:
+        if User.objects.filter(email=request.user.email).exists():
+            name = User.objects.filter(email=request.user.email).first()
+            if Doctors.objects.filter(D_Id=name).exists():
+                messages.error(request, f'Email already exists try using other email')     ##add in html
+                return redirect('welcome:logout')
+            else:
+                pass
         if request.method == 'POST':
             emergency_email = request.POST.get('em_mail')
             phone = request.POST.get('phone_num')
@@ -143,9 +156,11 @@ def pat_log(request):
             # print('username :')
             # print(user.username)
             # upadate the full name and delataeila
-
             p = Patient_DB(P_Id=user, Age=age, Gender=gender, Blood_group=blood, Phone_num=phone,
                            Emergency_num=emer_phone_num, medical_con=Medical, user_pat='yes')
+            if(emergency_email == "" or gender == '' or blood_type == "" or emer_phone_num == ""):
+                messages.error(request, f'Fill all fields ')
+                return redirect('welcome:pat_log')
             p.save()
             return render(request, 'patient_home/home.html')
         else:
