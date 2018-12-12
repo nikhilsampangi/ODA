@@ -1,0 +1,54 @@
+{% extends 'registration/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block 'title' %}data form {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+    <br><br><br><br>
+    <div class="col-sm-8">
+        <form action="{% url 'Registration:data1' %}" method="post">
+                {%  csrf_token %}
+                <h1>Shop Data</h1>
+
+                <br><br>
+
+                Shopid:&nbsp;&nbsp;<input type="number" name="sid" id="sid" required>
+
+                <br><br>
+
+                shopname:&nbsp;&nbsp;<input type="text" name="sname" id="sname" required>
+
+                <br><br>
+
+                lattitude:&nbsp;&nbsp;<input type="number" name="lati" id="lati" required>
+
+                <br><br>
+
+                longitude:&nbsp;&nbsp;<input type="number" name="longi" id="longi" required>
+
+                <br><br>
+
+                <button type="submit" class="btn btn-success btn-block">Submit</button>
+
+                <br><br>
+
+                <a href="{% url 'Registration:upload' %}">Add Stock</a>
+            <!--    <h><b>STOCK DATA</b></h><br><br>
+                shopid:<br>
+                <input type="number" name="shopid id" id="shopid"><br>
+                med id:<br>
+                <input type="number" name="med id" id="med id"><br>
+                med name:<br>
+                <input type="text" name="med name" id="med name"><br>
+                stock:<br>
+                <input type="number" name="stock" id="stock"><br><br>
+            -->
+            </form>
+    </div>
+
+{% endblock %}
+</body>
+</html>

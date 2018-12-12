@@ -7,8 +7,6 @@
 
         {% load static %}
         <title>Stock Availability</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oswald" rel="stylesheet">
         <style>
                  .scrollable-menu {
@@ -16,16 +14,17 @@
                      max-height: 100px;
                      overflow-x: hidden;
                  }
-        </style>
-        <style>
-        /* Style the input field */
-        #myInput {
-            padding: 20px;
-            margin-top: -6px;
-            border: 0;
-            border-radius: 0;
-            background: #f1f1f1;
-        }
+                 #med-dropdown::after {
+                    display:none;
+                }
+            /* Style the input field */
+            #myInput {
+                padding: 20px;
+                margin-top: -6px;
+                border: 0;
+                border-radius: 0;
+                background: #f1f1f1;
+            }
         </style>
 
         {% endblock %}
@@ -33,21 +32,22 @@
 
 	<body>
         {% block content %}
+        <br><br><br>
 		<div class="container">
             <div class="row">
-                <p style="font-family: Josefin Sans;font-size:60px">Here's the stock of all the medicines available in Pharmacy</p>
+                <p style="font-family: Josefin Sans;font-size:40px">Here's the inventory of your selection</p>
             </div>
-			<div class="dropdown justify-content-center">
-			   <button id="dropdownMenu1" class="btn dropdown-toggle btn-lg" data-toggle="dropdown">
-					Medicines
+			<div class="row dropdown" style="width: 700px;margin-right: auto;margin-left: auto;">
+			   <button id="dropdownMenu1" class="btn dropdown-toggle btn-lg btn-block" data-toggle="dropdown" id="med-dropdown">
+					Inventory
 					<span class="caret"></span>
 			   </button>
 			   <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="dropdownMenu1">
-               <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search.." style="width: 700px;">
 					{%for i in range %}
-					<li>
-					 <a href="#">{{i.0}} - {{i.1}}</a>
-				  </li>
+                        <li>
+                            <a href="#">{{i.0}} - {{i.1}}</a>
+                        </li>
                     {%endfor%}
 			   </ul>
 			</div>

@@ -17,22 +17,21 @@
 
 	{% endblock %}
 
-	
+
 </head>
 
 <body>
     {% block content %}
-
+    <br><br>
 	<!-- Main Content -->
 	<div class="container">
 
 		<div class="row">
-			<p style="font-family: Josefin Sans;font-size:60px">These are all the Blood Banks near you:</p>
+			<p style="font-family: Josefin Sans;font-size:45px">These are all the Blood Banks near you:</p>
 		</div>
-		
+
 		<!-- Google Maps API -->
 		 <div id="map" style="height: 600px">&nbsp;</div>
-        <p>Click on the map to add markers.</p>
         <script>
       // In the following example, markers appear when the user clicks on the map.
       // The markers are stored in an array.
@@ -44,7 +43,7 @@
         var latitudes={{lat|safe}}
         var longitudes={{lng|safe}}
         var shop_names={{names|safe}}
-        var doct= ["http://127.0.0.1:8000/diseaseidentification/medicalshops/"];
+        var doct= ["http://127.0.0.1:8000/home/bloodavail/"];
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
           center: haightAshbury,
@@ -111,9 +110,13 @@
         <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYl3jkGGMzayse2hTeqApY0qanvqXdmaI&callback=initMap">
         </script>
-		
+
 		<div class="row">
-			<p style="font-family: Josefin Sans;font-size:30px">also try:<br><a href="">Pharmacy Locator</a> for finding pharmacies near you and <br><a href="">Doctor Locator</a> for finding doctors near you</p>
+			<p style="font-family: Josefin Sans;font-size:30px">
+                also try:<br>
+                <a href="{% url 'pharma_loc' %}">Pharmacy Locator</a> for finding pharmacies near you and <br>
+                <a href="{% url 'doctor_locator' %}">Doctor Locator</a> for finding doctors near you
+            </p>
 		</div>
 
 	</div>
@@ -121,7 +124,3 @@
 
 	</body>
 </html>
-
-
-
-

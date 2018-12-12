@@ -15,44 +15,57 @@
 	<!--Google Fonts	-->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oswald" rel="stylesheet">
 
+
     {% endblock %}
 </head>
 
 <body>
     {% block content %}
-
+    <br><br>
     <!-- Main Content -->
 	<!-- Search Bar -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-	<div class="container">
+	<div class="container" id="doc">
 		<div class="row">
-			<p style="font-family: Josefin Sans;font-size:60px">Already know which doctor to pick?<br>Search for that doctor here to take an appointment..</p>
+			<p style="font-family: Josefin Sans;font-size:50px">Already know which doctor to pick?<br>Search for that doctor here to take an appointment..</p>
 		</div>
-		
+
 		<div class="row justify-content-center">
-			<form>
+			<form action="take_appointment" method="post">
+                {% csrf_token %}
+
 				<div class="card-body row no-gutters align-items-center">
-					<div class="col">
-						<input id="search_bar" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search for a doctor" >
+					<div class="col input-group dropdown" style="width: 700px;">
+                        <select class="form-control select2 dropdown-toggle" name="doct" >
+                           {% for i in  lat %}
+                            <option style="width: 700px;">
+                                <i class="fa fa-user-md" aria-hidden="true"></i>
+                                &nbsp;&nbsp;
+                                Dr.{{i.0}} - {{i.1}}
+                            </option>
+                            {% endfor %}
+                        </select>
 					</div>&nbsp;&nbsp;
-					<div class="col-auto">
-						<button class="btn btn-lg btn-outline-primary" type="submit">Search</button>
-					</div>
 				</div>
+
+                <br>
+                <div style="text-align: center;">
+                    <button class="btn btn-lg btn-outline-primary" type="submit">Book Appointment</button>
+                </div>
 			</form>
+
 		</div>
 		<br/><br/><br/><br/><br/><br/>
 		<div class="row">
-			<p style="font-family: Josefin Sans;font-size:40px">Or else try:<br><a href="">Doctor Locator</a> for finding doctors near you and <br><a href="">Doctor Identifier</a> for finding the type of doctor</p>
-		</div>		
-	</div>	
-	
-
+			<p style="font-family: Josefin Sans;font-size:30px">
+                Or else try:<br>
+                <a href="{% url 'doctor_locator' %}">Doctor Locator</a>
+                for finding doctors near you and <br>
+                <a href="">Doctor Identifier</a>
+                for finding the type of doctor
+            </p>
+		</div>
+	</div>
     {% endblock %}
 
 	</body>
 </html>
-
-
-
-

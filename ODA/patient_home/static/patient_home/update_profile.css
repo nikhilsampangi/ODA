@@ -1,0 +1,18 @@
+.font{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #204d99;
+    border-color: #1C7CAC ;
+}
+.font_save{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: cyan;
+    border-color: #1C7CAC ;
+}
+.font_profile{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    color: cyan;
+    border-color: #1C7CAC ;
+}

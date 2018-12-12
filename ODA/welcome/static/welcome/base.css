@@ -21,25 +21,93 @@
 	height: 50px;
 }
 
-
-.btn-circle.btn-xl {
-	width: 70px;
-	height: 70px;
-	padding-top: 10px;
-	padding-right: 15px;
-	padding-left: 15px;
-	padding-bottom: 10px;
-	font-size: 24px;
-	line-height: 1.33;
-	border-radius: 35px;
+.ico_prof_manage_active {
+	border-bottom: 4px solid #F8F8F8;
 }
 
-#sos {
-	position: fixed;
-	bottom: 10px;
-	right: 10px;
+.ico_prof_manage_active::after {
+	content: "";
+    position:absolute;
+    width: 179px;
+	height: 8px;
+	border-bottom: 4px solid #f94e4e;
 }
 
+
+#ico_prof_manage {
+	background-image: url(images/nav_ico-10.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: auto;
+	width: 230px;
+	min-height: 47px;
+}
+
+.ico_sched_active {
+	border-bottom: 4px solid #F8F8F8;
+}
+
+.ico_sched_active::after {
+	content: "";
+    position:absolute;
+    width: 179px;
+	height: 8px;
+	border-bottom: 4px solid #8e44a0;
+}
+
+
+#ico_sched {
+	background-image: url(images/nav_ico-11.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: auto;
+	width: 230px;
+	min-height: 47px;
+}
+
+.ico_blog_active {
+	border-bottom: 4px solid #F8F8F8;
+}
+
+.ico_blog_active::after {
+	content: "";
+    position:absolute;
+    width: 179px;
+	height: 8px;
+	border-bottom: 4px solid #097896;
+}
+
+
+#ico_blog {
+	background-image: url(images/nav_ico-12.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: auto;
+	width: 230px;
+	min-height: 47px;
+}
+
+.ico_logout_active {
+	border-bottom: 4px solid #F8F8F8;
+}
+
+.ico_logout_active::after {
+	content: "";
+    position:absolute;
+    width: 179px;
+	height: 8px;
+	border-bottom: 4px solid #ef8614;
+}
+
+
+#ico_logout {
+	background-image: url(images/nav_ico-13.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: auto;
+	width: 230px;
+	min-height: 47px;
+}
 
 #main_cont {
 	margin-top: 50px;

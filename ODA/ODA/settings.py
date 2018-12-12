@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
-
 import os
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'welcome',
     'patient_home',
     'rest_framework',
+    'social_django',
+    'DandS',
+    'Registration',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # SOcial
+                'social_django.context_processors.login_redirect', # SOcial
             ],
         },
     },
@@ -77,18 +83,23 @@ WSGI_APPLICATION = 'ODA.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mysql.connector.django',
+#         'NAME': 'oda_db',
+#         'USER': 'root',
+#         'PASSWORD': 'iiits@123',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#         'OPTIONS': {'autocommit': True},
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': 'oda_db',
-        'USER': 'root',
-        'PASSWORD': 'iiits@123',
-        'HOST': 'localhost',
-        'PORT': '',
-        'OPTIONS': {'autocommit': True},
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -108,6 +119,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.open_id.OpenIdAuth',  # for Google authentication
+    'social_core.backends.google.GoogleOpenId',  # for Google authentication
+    'social_core.backends.google.GoogleOAuth2',  # for Google authentication
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='918878356264-uls5jsbgrlcthkeo7irlo4307n335jgu.apps.googleusercontent.com'# KEY for google
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'GRVF96gkPEZhO2GEftTER_kW' # Secret Key for google
+
+SOCIAL_AUTH_URL_NAMESPACE = "welcome:social"
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -135,7 +158,8 @@ STATIC_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 
-LOGOUT_REDIRECT_URL='welcome:frontpage'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/MEDIA')
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -143,3 +167,8 @@ EMAIL_HOST_USER = 'onlinedocapp'
 EMAIL_HOST_PASSWORD = 'oda@iiits'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+
+LOGIN_URL = 'welcome:frontpage'
+LOGIN_REDIRECT_URL = 'welcome:pat_log'
+LOGOUT_REDIRECT_URL='welcome:frontpage'

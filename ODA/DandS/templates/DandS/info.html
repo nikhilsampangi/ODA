@@ -1,22 +1,87 @@
+{% extends 'patient_home/base.html' %}
+
 <!Doctype html>
 <html>
     <head>
-        <title>{{ disease.disease_name }}</title>
+        {% block css %}
+            <title>{{ disease.disease_name }}</title>
+            <link href="https://fonts.googleapis.com/css?family=Merriweather|Noto+Serif+TC|Titillium+Web" rel="stylesheet">
+        {% endblock %}
     </head>
-    <body>
-    <h2><em>What is {{ disease.disease_name }}?</em></h2><br>
-        {{ disease.disease_about }}<br><br>
-     <b><em>Causes:</em></b><br>
-        {{ disease.disease_causes }}<br><br>
-     <b><em>Diagnosis:</em></b><br>
-        {{ disease.disease_diagnosis }}<br><br>
-     <b><em>Treatment:</em></b><br>
-        {{ disease.disease_treatment }}<br><br>
-      <b><em>Symptoms:</em></b><br>
-      <ul>
-          {% for s in disease.symptoms_set.all %}
-          <li>{{ s.symptom }}</li><br>
-          {% endfor %}
-      </ul>
+
+    <body style="font-family: 'Merriweather', serif;">
+        {% block content %}
+            <br><br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 style="font-family: 'Noto Serif TC', serif;">
+                            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                            &nbsp;
+                            What is {{ disease.disease_name }}?
+                        </h2>
+                        <br>
+                            <p style="margin-left: 30px;">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                &nbsp;
+                                {{ disease.disease_about }}
+                            </p>
+                        <br>
+                        <h4 style="font-family: 'Noto Serif TC', serif;">
+                            <i class="fa fa-question" aria-hidden="true"></i>
+                            &nbsp;
+                            Causes:
+                        </h4>
+                        <br>
+                            <p style="margin-left: 30px;">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                &nbsp;
+                                {{ disease.disease_causes }}
+                            </p>
+                        <br>
+                        <h4 style="font-family: 'Noto Serif TC', serif;">
+                            <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                            &nbsp;
+                            Diagnosis:
+                        </h4>
+                        <br>
+                            <p style="margin-left: 30px;">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                &nbsp;
+                                {{ disease.disease_diagnosis }}
+                            </p>
+                        <br>
+                        <h4 style="font-family: 'Noto Serif TC', serif;">
+                            <i class="fa fa-ambulance" aria-hidden="true"></i>
+                            &nbsp;
+                            Treatment:
+                        </h4>
+                        <br>
+                            <p style="margin-left: 30px;">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                &nbsp;
+                                {{ disease.disease_treatment }}
+                            </p>
+                        <br>
+                        <h4 style="font-family: 'Noto Serif TC', serif;">
+                            <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                            &nbsp;
+                            Symptoms:
+                        </h4>
+                        <br>
+                        <ul class="fa-ul">
+                            {% for s in disease.symptoms_set.all %}
+                              <li>
+                                  <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                  &nbsp;
+                                  {{ s.symptom }}
+                              </li>
+                              <br>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
     </body>
 </html>

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emergency</title>
+	<style>
+  @-webkit-keyframes argh-my-eyes {
+    0%   { background-color: #ce2029; }
+    49% { background-color: #ce2029; }
+    50% { background-color: #0000FF; }
+    99% { background-color: #0000FF; }
+    100% { background-color: #ce2029; }
+  }
+  @-moz-keyframes argh-my-eyes {
+    0%   { background-color: #ce2029; }
+    49% { background-color: #ce2029; }
+    50% { background-color: #0000FF; }
+    99% { background-color: #0000FF; }
+    100% { background-color: #ce2029; }
+  }
+  @keyframes argh-my-eyes {
+    0%   { background-color: #ce2029; }
+    49% { background-color: #ce2029; }
+    50% { background-color: #0000FF; }
+    99% { background-color: #0000FF; }
+    100% { background-color: #ce2029; }
+  }
+  body {
+  -webkit-animation: argh-my-eyes 1s infinite;
+  -moz-animation:    argh-my-eyes 1s infinite;
+  animation:         argh-my-eyes 1s infinite;
+}
+</style>    
+</head>
+<body>
+<br><br><br><br>
+
+<br><br><br><br><br><br>
+<h1 style="color: white; text-align: center; font-size: 60px;">SOS Mode Activated !!!</h1>
+<h2 style="font-family:'Source Sans Pro' ;text-align: center;">Emergeny Contacts have been notified</h2>
+<iframe src="{% static 'patient_home/alarm.mp3' %}" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+<br><br><br><br><br><br>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'patient_home/base.html' %}
+
+<!doctype html>
+<html>
+  <head>
+    {% block css %}
+    <title>Success</title>
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    <br><br><br>
+    <div class="container">
+      <div class="row">
+        Appointment Booked on {{dat.0}} with {{ doc.0 }}<br>
+        <a href="{% url 'pat_home_page' %}">Return to Home Page</a>
+      </div>
+    </div>
+    <br><br><br><br><br><br>
+    {% endblock %}
+</html>

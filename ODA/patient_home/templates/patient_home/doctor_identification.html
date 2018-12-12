@@ -1,0 +1,99 @@
+{% extends 'patient_home/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block css %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+	<!--Google Fonts	-->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oswald" rel="stylesheet">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <br><br>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <!-- Main Content -->
+	<!-- Search Bar -->
+	<div class="container">
+		<div class="row">
+			<p style="font-family: Josefin Sans;font-size:45px">Select any disease to show its general medicines</p>
+		</div>
+        <br>
+        <div class="card-body row no-gutters align-items-center">
+          <form action='doc' method="post">
+            {% csrf_token %}
+          <div class="col-sm-8 input-group dropdown" style="width: 700px;">
+                        <select class="form-control select2 dropdown-toggle" name="doct" value=" " >
+                            <option style="width: 700px;"> Audiologist </option>
+                            <option style="width: 700px;"> Allergist </option>
+                            <option style="width: 700px;"> Andrologists </option>
+                            <option style="width: 700px;"> Anesthesiologist </option>
+                            <option style="width: 700px;"> Cardiologist </option>
+                            <option style="width: 700px;"> Cardiovascular Surgeon </option>
+                            <option style="width: 700px;"> Clinical Neurophysiologist </option>
+                            <option style="width: 700px;"> Dentist </option>
+                            <option style="width: 700px;"> Dermatologist </option>
+                            <option style="width: 700px;"> Emergency Doctors </option>
+                            <option style="width: 700px;"> Endocrinologist </option>
+                            <option style="width: 700px;"> Epidemiologists </option>
+                            <option style="width: 700px;"> ENT Specialist </option>
+                            <option style="width: 700px;"> Family Practitioner </option>
+                            <option style="width: 700px;"> Gastroenterologist </option>
+                            <option style="width: 700px;"> Gynecologist </option>
+                            <option style="width: 700px;"> General Psychiatrist </option>
+                            <option style="width: 700px;"> Hematologist </option>
+                            <option style="width: 700px;"> Hepatologists </option>
+                            <option style="width: 700px;"> Immunologist </option>
+                            <option style="width: 700px;"> Infectious Disease Specialist </option>
+                            <option style="width: 700px;"> Internal Medicine Specialists </option>
+                            <option style="width: 700px;"> Internists </option>
+                            <option style="width: 700px;"> Medical Geneticist </option>
+                            <option style="width: 700px;"> Microbiologist </option>
+                            <option style="width: 700px;"> Neonatologist </option>
+                            <option style="width: 700px;"> Nephrologists </option>
+                            <option style="width: 700px;"> Neurologist </option>
+                            <option style="width: 700px;"> Neurosurgeons </option>
+                            <option style="width: 700px;"> Obstetrician </option>
+                            <option style="width: 700px;"> Oncologist </option>
+                            <option style="width: 700px;"> Ophthalmologist </option>
+                            <option style="width: 700px;"> Orthopedic Surgeon </option>
+                            <option style="width: 700px;"> Orthopedist </option>
+                            <option style="width: 700px;"> Primatologist </option>
+                            <option style="width: 700px;"> Parasitologist </option>
+                            <option style="width: 700px;"> Pathologists </option>
+                            <option style="width: 700px;"> Pediatrician </option>
+                            <option style="width: 700px;"> Plastic Surgeon </option>
+                            <option style="width: 700px;"> Physiologists </option>
+                            <option style="width: 700px;"> Physiatrist </option>
+                            <option style="width: 700px;"> Podiatrists </option>
+                            <option style="width: 700px;"> Psychiatrists </option>
+                            <option style="width: 700px;"> Pulmonologist </option>
+                            <option style="width: 700px;"> Radiologists </option>
+                            <option style="width: 700px;"> Reproductive Endocrinologist </option>
+                            <option style="width: 700px;"> Urologist </option>
+                            <option style="width: 700px;"> Veterinarian </option>
+              </select>
+					</div>
+          <br>
+          <div class="col-sm-4">
+              <input type="submit" value="show doctors" name="submit" class="btn btn-outline-success btn-lg">
+          </div>
+        </form>
+				</div>
+        <br><br><br>
+        <br><br><br><br><br><br><br><br>
+		<div class="row">
+			<p style="font-family: Josefin Sans;font-size:25px">Or else try:<br><a href="">Doctor Locator</a> for finding doctors near you and <br><a href="">Doctor Identifier</a> for finding the type of doctor</p>
+		</div>
+	</div>
+    {% endblock %}
+</body>
+</html>

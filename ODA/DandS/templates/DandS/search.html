@@ -1,0 +1,50 @@
+{% extends 'patient_home/base.html'%}
+
+<!Doctype html>
+
+<html>
+    <head>
+        {% block css %}
+        <title>Searchbar</title>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oswald" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        <br><br><br>
+        <div class="container">
+            <div class="row">
+                <p style="font-family: Oswald;font-size:40px">Search Diseases, Symptoms or Body parts here....</p>
+            </div>
+            <br><br>
+          <div class="row">
+            <div class="col-sm-7" style="margin-left:auto; margin-right:auto;">
+              <form action="." method="POST">
+                  {% csrf_token %}
+                  <input type="text" id="search_box" class="form-control" name="search_box" placeholder="Search Diseases or symptoms...">
+                  &nbsp;&nbsp;&nbsp;
+                  <button id="search_submit" class="btn btn-outline-primary form-control" type="submit">Search</button>
+              </form><br>
+              <div style="color:red">
+                  {% if messages %}
+                          {% for message in messages %}
+                              {{ message }}
+                          {% endfor %}
+                  {% endif %}
+              </div>
+              <div>
+                  {% if match_unique %}
+                      <ol>
+                          {% for disease in match_unique %}
+                              <li style="color:green"><a href="{% url 'info' disease.disease_part disease.disease_name %}">{{ disease.disease_name }}</a></li>
+                          {% endfor %}
+                      </ol>
+                  {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+        {% endblock %}
+    </body>
+</html>

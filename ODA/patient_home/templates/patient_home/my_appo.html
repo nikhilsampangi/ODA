@@ -19,14 +19,17 @@
 
 <body>
     {% block content %}
-
+    <br><br>
     <!-- Appointments List -->
     <div class="container row" id="grid1">
       <div class="col-xs-6">
 		  <div id="pg_heading">&nbsp;</div>
-        <ul id="app_list">
-        	<li>No upcoming appointments</li>
-        </ul>
+
+                <ul id="app_list">
+                    {% for i in dte %}
+                    <li>You have an appointment with {{ i.1 }} on {{ i.0 }}</li>
+                    {% endfor %}
+                </ul>
       </div>
     </div>
 	<br><br><br><br><br><br><br><br><br><br><br>

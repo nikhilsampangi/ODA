@@ -1,0 +1,148 @@
+{% extends 'welcome/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block css %}
+
+    <meta charset="UTF-8">
+    <title>Schedule_Manager</title>
+
+    <!-- Google Fonts -->
+
+
+    {%  load static %}
+	<link rel="stylesheet" href="{% static 'welcome/jquery.calendar.css' %}" />
+    <link rel="stylesheet" href="{% static 'welcome/schedule.css' %}" />
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <!-- Jquery Calendar Plugin -->
+    {% load static %}
+    <script src="{% static 'welcome/jquery.calendar.js' %}"></script>
+
+    {% endblock %}
+</head>
+<body>
+
+    {% block content %}
+        <br><br><br><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div id="pnlEventCalendar"></div>
+                    <script>
+                    $(function () {
+                        $('#pnlEventCalendar').calendar({months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                            days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],onSelect: function (event) {
+                                $('#sel_date').text(event.label);
+
+
+                                document.getElementById("slot1").innerHTML = "No Appointments";
+                                document.getElementById("slot2").innerHTML = "No Appointments";
+                                document.getElementById("slot3").innerHTML = "No Appointments";
+                                document.getElementById("slot4").innerHTML = "No Appointments";
+
+
+                                var date= $('#sel_date').text().split('.');
+                                var day = date[0];
+                                var month = date[1];
+                                var year = date[2];
+
+
+                                var yea={{year|safe}}
+                                var mon={{mon|safe}}
+                                var da={{da|safe}}
+                                var slo={{slo|safe}}
+                                var pat={{pat|safe}}
+
+                                for(i=0;i<yea.length;i++)
+                                {
+
+
+                                  if(parseInt(yea[i])== year && month== parseInt(mon[i]) && day== parseInt(da[i])){
+
+                                   if(slo[i]==8){
+                                     document.getElementById("slot1").innerHTML = pat[i];
+                                    }
+                                  if (slo[i]==1) {
+                                      document.getElementById("slot2").innerHTML = pat[i];
+
+                                    }
+                                  if (slo[i]==3) {
+                                      document.getElementById("slot3").innerHTML = pat[i];
+                                    }
+                                  if (slo[i]==7) {
+                                      document.getElementById("slot4").innerHTML = pat[i];
+                                    }
+
+                                  }
+
+                                }
+
+
+                                /* Code to get appointments for that day */
+
+                        }});
+                    });
+                    </script>
+                </div>
+
+                <div class="col-6" id="display_appo">
+                    <p>Appointments on <b><span id="sel_date">[date]</span></b> : </p>
+                    <ul class="fa-ul">
+                        <li>
+                            <i class="fa-li fa fa-calendar-plus-o" aria-hidden="true"></i>
+                            Morning &nbsp;&nbsp;&nbsp;(8-11 am) &nbsp;&nbsp;
+                            <button class="btn btn-outline-dark">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span id="slot1">Patient Name</span>
+                            </button>
+                        </li>
+                        <br>
+                        <li>
+                            <i class="fa-li fa fa-calendar-plus-o" aria-hidden="true"></i>
+                            Afternoon&nbsp;(12-3 pm) &nbsp;&nbsp;
+                            <button class="btn btn-outline-dark">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span id="slot2">Patient Name</span>
+                            </button>
+                        </li>
+                        <br>
+                        <li>
+                            <i class="fa-li fa fa-calendar-plus-o" aria-hidden="true"></i>
+                            Evening &nbsp;&nbsp;&nbsp;&nbsp;(03-6 pm) &nbsp;&nbsp;
+                            <button class="btn btn-outline-dark">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span id="slot3">Patient Name</span>
+                            </button>
+                        </li>
+                        <br>
+                        <li>
+                            <i class="fa-li fa fa-calendar-plus-o" aria-hidden="true"></i>
+                            Night &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7-10 pm) &nbsp;&nbsp;
+                            <button class="btn btn-outline-dark">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span id="slot4">Patient Name</span>
+                            </button>
+                        </li>
+                    </ul>
+              </div>
+    		</div>
+    		<hr>
+    	</div>
+                </div>
+            </div>
+            <br><br>
+            <div class="row"></div>
+            <br><br><br><br><br><br><br><br>
+        </div>
+
+
+
+
+    {% endblock %}
+
+</body>
+</html>

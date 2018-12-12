@@ -20,17 +20,16 @@
 <body>
 
     {% block content %}
-
+    <br><br>
 	<!-- Main Content -->
 	<div class="container">
 		<div class="row">
-			<p style="font-family: Josefin Sans;font-size:60px">These are all the Pharmacies near you:</p>
+			<p style="font-family: Josefin Sans;font-size:45px">These are all the Pharmacies near you:</p>
 		</div>
 
 				
 		<!-- Google Maps API -->
         <div id="map" style="height: 600px">&nbsp;</div>
-        <p>Click on the map to add markers.</p>
         <script>
       // In the following example, markers appear when the user clicks on the map.
       // The markers are stored in an array.
@@ -111,7 +110,11 @@
         </script>
 		
 		<div class="row">
-			<p style="font-family: Josefin Sans;font-size:30px">also try:<br><a href="">Doctor Locator</a> for finding doctors near you and <br><a href="">Blood Bank Locator</a> for checking Blood Availability</p>
+			<p style="font-family: Josefin Sans;font-size:30px">
+                also try:<br>
+                <a href="{% url 'doctor_locator' %}">Doctor Locator</a> for finding doctors near you and <br>
+                <a href="{% url 'blood_banks' %}">Blood Bank Locator</a> for the Blood Banks near you
+            </p>
 		</div>		
 	</div>	
 	

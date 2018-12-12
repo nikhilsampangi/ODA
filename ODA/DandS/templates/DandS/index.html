@@ -1,18 +1,38 @@
+{% extends 'patient_home/base.html' %}
+
 <!Doctype html>
 <html>
     <head>
-        <title>HomePage</title>
+        {% block css %}
+            <title>Diseases</title>
+            <link href="https://fonts.googleapis.com/css?family=Merriweather|Noto+Serif+TC|Titillium+Web" rel="stylesheet">
+        {% endblock %}
     </head>
     <body>
-        {% if diseases %}
-            <h1>{{ body_part }} Diseases</h1>
-          <ul>
-              {% for disease in diseases %}
-                  <li><a href="{% url 'info' body_part disease.disease_name %}">{{ disease.disease_name }}</a></li>
-              {% endfor %}
-          </ul>
-        {% else %}
-            <h2>There are no diseases related to this part</h2>
-        {% endif %}
+
+        {% block content %}
+            <br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% if diseases %}
+                            <h1 style="font-family: 'Noto Serif TC', serif;"> Diseases related to {{ body_part }} are</h1>
+                            <br>
+                            <ul class="fa-ul" style="font-family: 'Titillium Web', sans-serif;font-size:20px;">
+                              {% for disease in diseases %}
+                                  <li>
+                                      <i class="fa fa-medkit" aria-hidden="true"></i>&nbsp;
+                                      <a href="{% url 'info' body_part disease.disease_name %}">{{ disease.disease_name }}</a>
+                                  </li>
+                              {% endfor %}
+                            </ul>
+                        {% else %}
+                            <h2>There are no diseases related to this part</h2>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br>
+        {% endblock %}
     </body>
 </html>

@@ -1,0 +1,27 @@
+{% extends 'Registration/base.html' %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+    <br><br><br><br>
+    <h1>Login</h1>
+    <br><br>
+    <div class="col-sm-6">
+    <form method="post" action="{% url 'Registration:userlogin' %}">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="uname">Username: </label>
+            <input type="text" required name="username" class="form-control" id="uname">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" required name="password" class="form-control" id="pwd">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success btn-block" style="border-radius: 0;">Login</button>
+        <br><br>
+        <p><a href="{% url 'Registration:reset' %}">Forgot password ?</a></p>
+        <br><br><br><br>
+    </form>
+    </div>
+{% endblock %}

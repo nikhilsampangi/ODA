@@ -1,0 +1,26 @@
+{% extends 'Registration/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <style>
+        *{
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+    </style>
+    <br><br><br><br>
+      {% if registered %}
+        <h1> Registered Successfully </h1>
+        <br><br>
+        <a href="{% url 'Registration:pharmacies' %}">Go to Home</a>
+        <br><br><br><br><br><br><br><br>
+      {% else %}
+        <h2>Sign up</h2>
+        <form  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                {{ user_form.as_p }}
+            <button type="submit" class="btn btn-success">Sign up</button>
+        </form>
+          <br><br><br><br>
+      {% endif %}
+{% endblock %}

@@ -18,11 +18,11 @@ a{color:inherit;text-decoration:none}
 	width: 100%;
 	margin: auto;
 	max-width: 525px;
-	min-height: 1200px;
+	min-height: 2200px;
 	position: absolute;
 	box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-
 }
+
 .login-html{
 	width: 100%;
 	height: 100%;
@@ -56,10 +56,9 @@ a{color:inherit;text-decoration:none}
 }
 .login-html .tab{
 	font-size:22px;
-	margin-right:15px;
-	padding-bottom:5px;
-	margin:0 15px 10px 0;
-	display:inline-block;
+    padding-bottom:5px;
+    margin: 0 15px 10px 0;
+    display:inline-block;
 	border-bottom:2px solid transparent;
 }
 .login-html .sign-in:checked + .tab,
@@ -200,4 +199,41 @@ a{color:inherit;text-decoration:none}
 
 .sel_opt {
 	background-color: #6a6f8c;
+}
+
+/* Modal */
+
+
+#loc_modal{
+    min-width: 500px;
+}
+
+.tooltip-inner {
+    max-width: 500px;
+}
+
+.modal-footer {
+    padding: 0;
+}
+
+#done {
+    width: 800px;
+    outline: none;
+}
+
+/* Dropdown options styling */
+
+#gd *
+{
+ background-color:#FFFFFF;
+}
+
+#qual *
+{
+ background-color:#FFFFFF;
+}
+
+#specs *
+{
+ background-color:#FFFFFF;
 }

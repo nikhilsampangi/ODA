@@ -1,0 +1,49 @@
+{% extends 'Registration/base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<br><br><br><br>
+{% if user.is_authenticated %}
+    <h2 style="font-family: 'Roboto Condensed', sans-serif;">Welcome Mr.{{ user.username }}!</h2>
+  <div class="row">
+        <div class="col-sm-7">
+            <br>
+          <h5 style="font-family: 'Roboto Condensed', sans-serif;">Welcome to Med_Shop page !!!</h5>
+          <br>
+          <h6 style="font-family: 'Roboto Condensed', sans-serif;">Add your Pharmacy to the ODA family now!</h6>
+            <br>
+          <a href="{% url 'Registration:upload' %}" class="btn btn-outline-dark btn-block">Add Pharmacy</a>
+        </div>
+        <div class="col-sm-5">
+          <a href="{% url 'Registration:userlogout' %}" class="btn btn-success" style="border-radius: 0;">logout</a>
+            &nbsp;&nbsp;&nbsp;<span style="font-size: 30px">|</span>&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'Registration:reset' %}" class="btn btn-info" style="border-radius: 0;">reset password</a>
+        </div>
+  </div>
+  <br><br><br><br><br><br>
+{% else %}
+    <br><br><br>
+    <div class="row">
+        <div class="col-sm-4" style="font-family: 'Roboto Condensed', sans-serif;font-size: larger">
+            Login and update your Pharmacy Stock
+        </div>
+        <div class="col-sm-4" style="margin-left: auto;margin-right: auto;">
+            <a href="{% url 'Registration:userlogin' %}" class="btn btn-outline-info btn-lg">Login</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="font-size: 30px;"> | </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'Registration:signup' %}" class="btn btn-outline-danger btn-lg">Signup</a>
+        </div>
+        <div class="col-sm-4" style="font-family: 'Roboto Condensed', sans-serif;font-size: larger">
+            First Time?<br>
+            Sign up and Add your Pharmacy to the ODA family and Update your Stock
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="row">
+    <a href="{% url 'welcome:frontpage' %}"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>&nbsp; Back to front page</a>
+    </div>
+    <br><br>
+{% endif %}
+{% endblock %}

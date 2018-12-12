@@ -2,6 +2,7 @@
 /* CSS Document */
 
 /* Header */
+
 .dropdown-toggle {
     display:none;
 }
@@ -185,7 +186,7 @@
 
 
 #navbar {
-	background-color: #D3181B;
+	background-color: #d0d3d2;
 /*fixed position*/
    	z-index: 10000;
    	position: fixed;
@@ -260,3 +261,5 @@
 	height: 100px;
 	background-repeat: no-repeat;
 }
+
+

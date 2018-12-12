@@ -1,9 +1,16 @@
+.bg {
+	background-image: url("images/15002.jpg");
+	background-repeat: repeat-y;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
 
 #welcome {
 	text-align: center;
 	font-family: Permanent Marker;
 	font-size: xx-large;
-	color: #439ACB
+	color: #F94E4E;
 }
 
 /* Heading */
@@ -36,10 +43,10 @@
 
 #grid2 {
 	width: 100%;
-	background-image: -webkit-linear-gradient(270deg,rgba(79,172,254,1.00) 0.52%,rgba(0,242,254,1.00) 100%);
-	background-image: -moz-linear-gradient(270deg,rgba(79,172,254,1.00) 0.52%,rgba(0,242,254,1.00) 100%);
-	background-image: -o-linear-gradient(270deg,rgba(79,172,254,1.00) 0.52%,rgba(0,242,254,1.00) 100%);
-	background-image: linear-gradient(180deg,rgba(79,172,254,1.00) 0.52%,rgba(0,242,254,1.00) 100%);
+	background-image: -webkit-linear-gradient(270deg,rgba(79,172,254,0.80) 0.52%,rgba(0,242,254,0.80) 100%);
+	background-image: -moz-linear-gradient(270deg,rgba(79,172,254,0.80) 0.52%,rgba(0,242,254,0.80) 100%);
+	background-image: -o-linear-gradient(270deg,rgba(79,172,254,0.80) 0.52%,rgba(0,242,254,0.80) 100%);
+	background-image: linear-gradient(180deg,rgba(79,172,254,0.80) 0.52%,rgba(0,242,254,0.80) 100%);
 	text-align: center;
 	background-blend-mode: lighten;
 }
@@ -55,12 +62,11 @@
 	color: #4B6DE7;
 }
 
-#grid3::after{
-	content: url(images/link.png);
-}
 
+/* Featured Doctor */
 #grid4{
-	background-color: #554E4E;
+	background-color: rgba(85, 78, 78, 0.80);
+    border-radius: 7px;
 }
 
 #grid4 img{
@@ -70,13 +76,17 @@
 	height: 70%;
 }
 
+#doc_prof {
+    max-width: 450px;
+    border-radius: 7px;
+}
 /*facts section*/
 
 #facts {
 	width: 100%;
-	background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
-	text-align: center;
+	background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 37%, #46aef7 70%);
 	background-blend-mode: lighten;
+	text-align: center;
 }
 
 #facts_int {
@@ -84,4 +94,13 @@
 	width: 75%;
 	color: #FFFFFF;
 	font-size: x-large;
+}
+
+/* tutorial link */
+#tut_link{
+    text-align: center;
+    outline: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+
 }

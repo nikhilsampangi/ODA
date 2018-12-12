@@ -1,3 +1,9 @@
+{% if user.patient_db.user_pat == 'yes' %}
+
+ <meta http-equiv="refresh" content="0; URL='http://127.0.0.1:8000/home'" />
+
+{% else %}
+
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -6,10 +12,12 @@
   <title>ODA:Patient</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600">
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
     {% load static %}
   <link rel="stylesheet" href="{% static 'welcome/pat_log.css' %}">
-
+  <script src="{% static 'javaScript/pat_val.js' %}"></script>
+    <!-- <script src="{% static 'javaScript/pass_val.js' %}"></script> -->
 
 </head>
 
@@ -23,24 +31,26 @@
 		<label for="tab-2" class="tab">Registration Step:2</label>
 
         <div class="login-form">
-            <form method="post" action="{% url 'pat_home_page' %}">
+            <form method="post" action="{% url 'welcome:pat_log' %}">
                 {% csrf_token %}
-			    <div class="sign-up-htm">
-                <div class="group">
+                <div class="group" id="phn_div">
 					<label for="phn" class="label">Phone Number</label>
-					<input id="phn" type="text" class="input" data-type="number" name="phone_num">
+					<input id="phn" type="text" class="input" data-type="number" name="phone_num" maxlength="10">
+                    <p id="phn_err"></p>
 				</div>
                 <div class="group">
 					<label for="em_phn" class="label">Emergency Contact</label>
-					<input id="em_phn" type="text" class="input" data-type="number" name="em_phone_num">
+					<input id="em_phn" type="text" class="input" data-type="number" name="emer_phone_num" maxlength="10">
+          <p id="emg_phn_err"></p>
 				</div>
                 <div class="group">
 					<label for="em_mail" class="label">Emergency Mail</label>
-					<input id="em_mail" type="email" class="input" name="em_mail">
+					<input id="em_mail" type="email" class="input" name="emer_email">
 				</div>
                 <div class="group">
 					<label for="age" class="label">Age</label>
-					<input id="age" type="text" class="input" data-type="number" name="age">
+					<input id="age" type="text" class="input" data-type="number" name="Age" maxlength="3">
+                    <p id="age_err"></p>
 				</div>
                 <div class="group">
 					<label for="gd" class="label">Gender</label>
@@ -52,11 +62,16 @@
 				</div>
                 <div class="group">
 					<label for="bg" class="label">Blood Group</label>
-					<select id="bg" name="blood_group" class="input" required>
-                        <option value="A+"  class="sel_opt">A+</option>
-                        <option value="A-" class="sel_opt">A-</option>
-                        <option value="B+" class="sel_opt">B+</option>
-                        <option value="B-" class="sel_opt">B-</option>
+					<select id="bg" name="blood" class="input" required>
+                        <option value="A"  class="sel_opt">A</option>
+                        <option value="A" class="sel_opt">B</option>
+                        <option value="AB" class="sel_opt">AB</option>
+                        <option value="O" class="sel_opt">O</option>
+                    </select>
+                    <br>
+                    <select id="bg" name="blood_type" class="input" required>
+                        <option value="+ve"  class="sel_opt">+ve</option>
+                        <option value="-ve" class="sel_opt">-ve</option>
                     </select>
 				</div>
 				<div class="group">
@@ -65,10 +80,9 @@
 				</div>
 
 				<div class="group" align="center">
-					<button type="submit" class="btn-hover color-1">Sign Up</button>
+					<button id="submit_user_reg" type="submit" class="btn-hover color-1">Sign Up</button>
 				</div>
 				<div class="hr"></div>
-			</div>
             </form>
 		</div>
 	</div>
@@ -79,3 +93,4 @@
 </body>
 
 </html>
+{% endif %}

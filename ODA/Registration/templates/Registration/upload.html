@@ -1,0 +1,129 @@
+{% extends 'registration/base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block title %}UPLOAD Excel{% endblock %}
+    </title>
+</head>
+<body style="margin-top: 30px;margin-left: 30px;">
+<div class="container">
+    {% block content %}
+        <br><br><br><br><br>
+        <div class="row">
+            <div class="col-sm-6">
+                <form action="{% url "Registration:upload" %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    Shopid:<br><br>
+                    <input type="number" name="sid" id="sid" title="shopid" required class="form-control">
+
+                    <br><br>
+
+                    shopname:<br><br>
+                    <input type="text" name="sname" id="sname" title="shopname" required class="form-control">
+
+                    <br><br>
+
+                    <div class="group">
+                        <input id="lat" type="hidden" class="input" name="lat" value=" " required>
+                    </div>
+                    <div class="group">
+                        <input id="log" type="hidden" class="input" name="log" value=" " required>
+                    </div>
+                    <hr>
+                    <br><br>
+
+                    <b>Upload Stock data through Excel file</b><br><br>
+                    <br>
+                    <input type="file"
+                           title="Upload excel file"
+                           name="excel_file" id="excel"
+                           required="required">
+                    </input><br><br>
+                    <input type="submit"
+                           value="Upload" class="btn btn-primary btn-sm">
+                    </input>
+                    <br><br>Your excel sheet should be in this format <b>ONLY</b><br>
+                    {% load static %}
+                    <img id="myImg" src="{% static 'Registration/images/excel.png' %}"
+                         style="width:200%;max-width:600px">
+
+                    <!-- The Modal -->
+            </div>
+
+            <div class="col-sm-6">
+
+                <div id="map" style="height:450px" class="row-2" class="col-6">
+                </div>
+                <p> Click on any point to select the location ,click again to deselect it</p>
+                <script>
+                    function initMap() {
+                        var myLatlng = {lat: -11.363, lng: 80.044};
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 4,
+                            center: myLatlng
+                        });
+                        var temp = [0];
+                        google.maps.event.addListener(map, 'click', function (event) {
+                            console.log(temp);
+                            if (temp[1] == 0) {
+                                temp = [temp[0]];
+                                console.log(temp)
+                            }
+                            if (temp.length == 1) {
+                                temp.push(1)
+                                temp = placeMarker(event.latLng, temp);
+                            }
+                            console.log(temp)
+                        });
+
+                        function placeMarker(location, temp) {
+                            if (temp[1] == 1 && temp.length == 2) {
+                                var marker = new google.maps.Marker({
+                                    position: location,
+                                    map: map
+                                });
+
+                                document.getElementById("lat").value = location.lat();
+                                document.getElementById("log").value = location.lng();
+                                google.maps.event.addListener(marker, 'click', function () {
+                                    marker.setMap(null);
+                                    temp[1] = 0;
+                                    console.log(temp);
+                                    document.getElementById("lat").value = " ";
+                                    document.getElementById("log").value = " ";
+                                });
+
+                                var infowindow = new google.maps.InfoWindow({
+                                    content: 'Latitude: ' + location.lat() +
+                                    '<br>Longitude: ' + location.lng()
+                                });
+
+                                infowindow.open(map, marker);
+                            }
+                            console.log(temp)
+                            return temp;
+                        }
+                    }
+                </script>
+
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYl3jkGGMzayse2hTeqApY0qanvqXdmaI&callback=initMap">
+                </script>
+            </div>
+        </div>
+        </form>
+        </div>
+        <br><br><br><br>
+    {% endblock %}
+</div>
+<hr>
+
+
+<!-- Modal content-->
+<br><br>
+
+
+</body>
+</html>
